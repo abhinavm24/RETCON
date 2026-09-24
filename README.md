@@ -42,9 +42,18 @@ For another port:
 
 The two options keep separate data. The first installation downloads Airflow and its dependencies, so it can take a few minutes.
 
-### Connect the model
+### Connect a model
 
-In **Settings**, select `google/gemma-4-31b-it:free`, enter your OpenRouter key, test, and save. The key is encrypted in Airflow Connection `retcon_openrouter`; the model is stored in `extra.model`. Settings changes need no restart.
+Open **Settings** and choose a provider:
+
+| Provider | Model | API base URL | Key |
+| --- | --- | --- | --- |
+| OpenRouter | `google/gemma-4-31b-it:free` | Managed automatically | Required |
+| LM Studio / OpenAI-compatible | `qwen3.8-27b-uncensored-mlx` or your server's model ID | Your server's `/v1` URL | Optional |
+
+For LM Studio, start its local server on port 1234 and load the model. Use `http://127.0.0.1:1234/v1` with the Python launcher or `http://host.docker.internal:1234/v1` with Docker Desktop. The UI supplies the matching default. Docker and LM Studio must be able to reach each other; browser CORS settings are not needed because Airflow makes the requests.
+
+Click **Test connection**, then **Save**. Model, endpoint, and key are stored in Airflow Connection `retcon_openrouter`; settings changes need no restart. A blank key retains the saved key only for the same provider and endpoint. Switching providers or endpoints does not forward the old key.
 
 ## Install in an existing Airflow environment
 

@@ -11,7 +11,7 @@ RETCON is a single-writer hackathon demo packaged as an Airflow 3.3 plugin. Writ
 3. Open `http://127.0.0.1:8080/plugin/retcon-writer`. Both launchers use Airflow's native no-login demo mode and bind the published service to loopback.
 4. If the port is occupied, use `RETCON_PORT=8082 docker compose up --build` or `./scripts/local-demo --port 8082`, then open the matching URL.
 5. Confirm the writer loads, the Airflow indicator is available, and both `retcon_apply` and `retcon_cascade` are registered. A startup message alone is not sufficient.
-6. In **Settings**, configure OpenRouter model `google/gemma-4-31b-it:free` and the API key, then test and save. A saved key stays in the Airflow Connection; leave its field blank to retain it.
+6. In **Settings**, choose OpenRouter (`google/gemma-4-31b-it:free`, key required) or LM Studio / OpenAI-compatible (`qwen3.8-27b-uncensored-mlx`, key optional). For LM Studio use `http://127.0.0.1:1234/v1` from the venv or `http://host.docker.internal:1234/v1` from Docker Desktop. Check `/v1/models` for the exact served ID. Test and save; blank keys are retained only for the same provider and endpoint.
 
 Docker data lives in the named volume declared in `compose.yaml`. Venv data lives in `.retcon/local`. They are separate demo instances. Stop Docker with `Ctrl+C` or `docker compose down`, and the venv launcher with `Ctrl+C`; these preserve data. Keep credentials, runtime state, and `.env` files out of Git and image build contexts.
 

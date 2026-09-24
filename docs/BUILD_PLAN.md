@@ -35,7 +35,7 @@ A rejected model response gets one corrective attempt. Failure or cancellation p
 
 ## State and configuration
 
-The OpenRouter model and key live in the `retcon_openrouter` Airflow Connection. Story state lives under `$AIRFLOW_HOME/retcon`; separate API/worker hosts must share that directory through `RETCON_STATE_DIR`.
+The selected provider, model, endpoint, and optional key live in the `retcon_openrouter` Airflow Connection. OpenRouter and LM Studio/OpenAI-compatible servers use the same Common AI repair workflow. Story state lives under `$AIRFLOW_HOME/retcon`; separate API/worker hosts must share that directory through `RETCON_STATE_DIR`.
 
 The package includes its web assets and both DAGs. `retcon configure` registers the native DAG bundle; no files are copied into Airflow's DAG folder.
 

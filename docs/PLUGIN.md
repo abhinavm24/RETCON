@@ -60,12 +60,13 @@ tests/                  focused implementation and installation checks
 
 | Value | Storage | Reason |
 | --- | --- | --- |
-| OpenRouter API key | Password field of `retcon_openrouter` Airflow Connection | Common AI consumes a Connection; Airflow encrypts its password using the configured Fernet key. |
-| Selected model | `extra.model`, such as `openrouter:google/gemma-4-31b-it:free` | Common AI resolves the model from the same Connection. |
+| Provider API key | Password field of `retcon_openrouter` Airflow Connection | Common AI consumes a Connection; Airflow encrypts its password using the configured Fernet key. |
+| Selected model | `extra.model`: `openrouter:<model>` or `openai-chat:<model>` | Common AI resolves the model from the same Connection. |
+| API endpoint | Connection `host` for OpenAI-compatible servers | LM Studio uses its `/v1` base URL; OpenRouter supplies its own endpoint. |
 | DAG discovery | Airflow's `dag_bundle_config_list` | The DAG processor loads the installed package using its native bundle interface. |
 | Manuscript/revision state | `$AIRFLOW_HOME/retcon`, or `RETCON_STATE_DIR` | Persistent single-workspace storage with file locking and atomic publication; contains no provider credential. |
 
-The settings API returns the model, configured/key-present flags, and editability. It never returns the key or a key suffix. The Test button makes a small real model request from the server. Failures are sanitized, and request validation does not echo submitted credentials. Saving a blank key retains the stored credential.
+The settings API returns the model, configured/key-present flags, and editability. It never returns the key or a key suffix. The Test button makes a small real model request from the server. Failures are sanitized, and request validation does not echo submitted credentials. Saving a blank key retains the credential only when provider and endpoint match. Switching targets clears the credential. Keyless local servers use a harmless placeholder for the client library, so a cloud key from the environment cannot leak to them.
 
 Connection settings are locked during an active revision. Changing the model through the writer UI requires no Airflow restart. Remove any `AIRFLOW_CONN_RETCON_OPENROUTER` environment override because environment-based connections outrank the metadata database and would hide changes saved in the UI.
 
@@ -88,3 +89,12 @@ For Plugin Powerhouse, demonstrate Airflow's plugin listing and the embedded RET
 The exact tested versions, installation checks, and completed workflow evidence are maintained in [VERIFICATION.md](VERIFICATION.md).
 
 Sources: [Airflow 3.3.2 plugins](https://airflow.apache.org/docs/apache-airflow/3.3.2/administration-and-deployment/plugins.html), [Airflow 3.3.2 DAG bundles](https://airflow.apache.org/docs/apache-airflow/3.3.2/administration-and-deployment/dag-bundles.html), [Common AI connections](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/connections/pydantic_ai.html), [Connection lookup precedence](https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/secrets-backend/index.html).
+
+## LM Studio
+
+Start the LM Studio server and choose **LM Studio / OpenAI-compatible** in RETCON Settings. Set the served model ID, such as `qwen3.8-27b-uncensored-mlx`, and the API base URL:
+
+- Python virtual environment: `http://127.0.0.1:1234/v1`.
+- Docker Desktop: `http://host.docker.internal:1234/v1`.
+
+On Linux Docker Engine, use a host address reachable from the container; `host.docker.internal` may require a host-gateway mapping. Use an API key only when the model server requires one. RETCON tests `/chat/completions` and uses the same endpoint through Common AI for repairs.

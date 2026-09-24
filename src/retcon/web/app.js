@@ -25,6 +25,10 @@
   let settingsError = '';
   let setupPrompted = false;
   const defaultModel = 'google/gemma-4-31b-it:free';
+  const localModel = 'qwen3.8-27b-uncensored-mlx';
+  const localBaseUrl = 'http://localhost:1234/v1';
+  let settingsProvider = 'openrouter';
+  let providerDrafts = {};
 
   async function request(path, { method = 'GET', body } = {}) {
     let response;
@@ -61,6 +65,8 @@
 
   function renderSettingsControls() {
     const locked = settingsLocked();
+    $('settings-provider').disabled = settingsBusy || locked;
+    $('settings-base-url').disabled = settingsBusy || locked;
     $('settings-model').disabled = settingsBusy || locked;
     $('settings-key').disabled = settingsBusy || locked;
     $('settings-test').disabled = settingsBusy || locked;
@@ -68,21 +74,56 @@
     $('settings-close').disabled = settingsBusy;
     $('settings-save').innerHTML = `${settings?.configured ? 'Save settings' : 'Save & continue'}${icon('arrow')}`;
     $('settings-lock').hidden = !locked;
-    $('settings-lock').textContent = !settings ? 'Loading your connection settings…' : runInProgress() ? 'Finish or cancel the current revision before changing its model or key.' : 'Connection settings are managed by your Airflow administrator.';
+    $('settings-lock').textContent = !settings ? 'Loading your connection settings…' : runInProgress() ? 'Finish or cancel the current revision before changing its AI settings.' : 'Connection settings are managed by your Airflow administrator.';
     $('setup-banner').hidden = settings?.configured !== false;
   }
 
+  function sameSavedConnection() {
+    const provider = $('settings-provider').value;
+    if (provider !== (settings?.provider || 'openrouter')) return false;
+    const endpoint = (value) => String(value || '').trim().replace(/\/+$/, '');
+    return provider === 'openrouter' || endpoint($('settings-base-url').value) === endpoint(settings?.base_url);
+  }
+
+  function renderProviderFields() {
+    const local = $('settings-provider').value === 'openai';
+    const retainedKey = sameSavedConnection() && settings?.key_present;
+    $('settings-base-url-field').hidden = !local;
+    $('settings-base-url').required = local;
+    $('settings-model').placeholder = local ? localModel : defaultModel;
+    $('settings-model-hint').textContent = local ? 'Use the model ID shown in LM Studio’s server, or your OpenAI-compatible server.' : `The demo uses ${defaultModel}. You can enter another OpenRouter model ID.`;
+    $('settings-key-label').textContent = local ? 'API key (optional)' : 'OpenRouter API key';
+    $('settings-key').required = !local && !retainedKey;
+    $('settings-key').placeholder = retainedKey ? 'Leave blank to keep the saved key' : local ? 'Leave blank if your server needs no key' : 'Paste your OpenRouter key';
+    $('settings-key-hint').textContent = retainedKey ? 'A key is saved for this connection. Leave blank to keep it, or paste a replacement.' : local ? 'LM Studio normally needs no key. Add one only if your server requires it.' : 'Your key is sent to this workspace’s server and stored in Airflow.';
+    const configured = sameSavedConnection() && settings?.configured;
+    $('settings-connection').textContent = configured ? 'Configured' : 'Setup needed';
+    $('settings-connection').classList.toggle('configured', Boolean(configured));
+  }
+
   function fillSettings() {
-    $('settings-model').value = settings?.model || defaultModel;
+    settingsProvider = settings?.provider === 'openai' ? 'openai' : 'openrouter';
+    providerDrafts = {};
+    $('settings-provider').value = settingsProvider;
+    $('settings-model').value = settings?.model || (settingsProvider === 'openai' ? localModel : defaultModel);
+    $('settings-base-url').value = settings?.base_url || settings?.default_base_url || localBaseUrl;
     $('settings-key').value = '';
-    $('settings-key').required = !settings?.key_present;
-    $('settings-key').placeholder = settings?.key_present ? 'Leave blank to keep the saved key' : 'Paste your OpenRouter key';
-    $('settings-key-hint').textContent = settings?.key_present ? 'A key is already saved. Leave this blank to keep it, or paste a replacement.' : 'Your key is sent to this workspace’s server and stored in Airflow.';
     $('settings-title').textContent = settings?.configured ? 'AI settings' : 'Meet your writing assistant';
-    $('settings-description').textContent = settings?.configured ? 'Choose the model that helps repair your story. You stay in control of every revision.' : 'Connect OpenRouter once, then start with the demo or bring your own draft. No orchestration setup needed.';
-    $('settings-connection').textContent = settings?.configured ? 'Configured' : 'Setup needed';
-    $('settings-connection').classList.toggle('configured', Boolean(settings?.configured));
+    $('settings-description').textContent = settings?.configured ? 'Choose the model that helps repair your story. You stay in control of every revision.' : 'Choose OpenRouter or a local model, then start with the demo or bring your own draft.';
+    renderProviderFields();
     renderSettingsControls();
+  }
+
+  function changeProvider() {
+    providerDrafts[settingsProvider] = { model: $('settings-model').value, baseUrl: $('settings-base-url').value };
+    settingsProvider = $('settings-provider').value;
+    const draft = providerDrafts[settingsProvider];
+    $('settings-model').value = draft?.model ?? (settingsProvider === 'openai' ? localModel : defaultModel);
+    $('settings-base-url').value = draft?.baseUrl ?? settings?.default_base_url ?? localBaseUrl;
+    // A typed credential belongs to its original endpoint, never the new one.
+    $('settings-key').value = '';
+    renderProviderFields();
+    settingsFeedback('');
   }
 
   function settingsFeedback(message, kind = 'error') {
@@ -116,6 +157,7 @@
 
   async function openSettings() {
     if (settingsBusy) return;
+    if ($('settings-dialog').open) return;
     fillSettings();
     settingsFeedback('');
     if (!$('settings-dialog').open) $('settings-dialog').showModal();
@@ -128,12 +170,16 @@
   }
 
   function settingsBody() {
+    renderProviderFields();
     if (!$('settings-form').reportValidity()) return null;
+    const provider = $('settings-provider').value;
     const model = $('settings-model').value.trim();
+    const baseUrl = $('settings-base-url').value.trim();
     const key = $('settings-key').value.trim();
-    if (!model) { settingsFeedback('Enter an OpenRouter model ID.'); return null; }
-    if (!key && !settings?.key_present) { settingsFeedback('Add an OpenRouter API key to connect your model.'); return null; }
-    return { model, ...(key ? { api_key: key } : {}) };
+    if (!model) { settingsFeedback('Enter a model ID.'); return null; }
+    if (provider === 'openai' && !baseUrl) { settingsFeedback('Enter your server’s API base URL.'); return null; }
+    if (provider === 'openrouter' && !key && !(sameSavedConnection() && settings?.key_present)) { settingsFeedback('Add an OpenRouter API key to connect your model.'); return null; }
+    return { provider, model, ...(provider === 'openai' ? { base_url: baseUrl } : {}), ...(key ? { api_key: key } : {}) };
   }
 
   async function testSettings() {
@@ -146,7 +192,7 @@
     settingsFeedback('Asking your selected model for a short response…', 'pending');
     try {
       const result = await request('api/settings/test', { method: 'POST', body });
-      settingsFeedback(result.ok ? 'Connection works. Save your settings to use this model for revisions.' : (result.message || 'The model could not complete the test. Check your model ID and key.'), result.ok ? 'success' : 'error');
+      settingsFeedback(result.ok ? 'Connection works. Save your settings to use this model for revisions.' : (result.message || 'The model could not complete the test. Check your model ID, server URL, and key.'), result.ok ? 'success' : 'error');
     } catch (error) { settingsFeedback(error.message); }
     finally {
       settingsBusy = false;
@@ -674,9 +720,11 @@
   $('setup-button').addEventListener('click', openSettings);
   $('settings-close').addEventListener('click', () => { if (!settingsBusy) $('settings-dialog').close(); });
   $('settings-dialog').addEventListener('cancel', (event) => { if (settingsBusy) event.preventDefault(); });
-  $('settings-dialog').addEventListener('close', () => { $('settings-key').value = ''; });
+  $('settings-dialog').addEventListener('close', () => { $('settings-key').value = ''; providerDrafts = {}; });
   $('settings-form').addEventListener('submit', saveSettings);
   $('settings-test').addEventListener('click', testSettings);
+  $('settings-provider').addEventListener('change', changeProvider);
+  $('settings-base-url').addEventListener('input', () => { $('settings-key').value = ''; renderProviderFields(); settingsFeedback(''); });
   ['settings-model', 'settings-key'].forEach((id) => $(id).addEventListener('input', () => settingsFeedback('')));
   document.addEventListener('visibilitychange', () => { if (!document.hidden && !busy) loadState(); });
   loadState();
