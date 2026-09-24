@@ -1,0 +1,1636 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.4,
+    "text": " A novelist's nightmare. One change and the story stops making sense.",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.18,
+        "word": " A"
+      },
+      {
+        "start": 0.18,
+        "end": 0.92,
+        "word": " novelist's"
+      },
+      {
+        "start": 0.92,
+        "end": 1.16,
+        "word": " nightmare."
+      },
+      {
+        "start": 2.52,
+        "end": 2.72,
+        "word": " One"
+      },
+      {
+        "start": 2.72,
+        "end": 3.06,
+        "word": " change"
+      },
+      {
+        "start": 3.06,
+        "end": 3.7,
+        "word": " and"
+      },
+      {
+        "start": 3.7,
+        "end": 3.78,
+        "word": " the"
+      },
+      {
+        "start": 3.78,
+        "end": 4.04,
+        "word": " story"
+      },
+      {
+        "start": 4.04,
+        "end": 4.58,
+        "word": " stops"
+      },
+      {
+        "start": 4.58,
+        "end": 5.0,
+        "word": " making"
+      },
+      {
+        "start": 5.0,
+        "end": 5.4,
+        "word": " sense."
+      }
+    ]
+  },
+  {
+    "start": 6.9,
+    "end": 12.56,
+    "text": " Mara dies at the end of chapter two. So why is she still speaking in chapter three?",
+    "words": [
+      {
+        "start": 6.9,
+        "end": 7.38,
+        "word": " Mara"
+      },
+      {
+        "start": 7.38,
+        "end": 7.82,
+        "word": " dies"
+      },
+      {
+        "start": 7.82,
+        "end": 8.14,
+        "word": " at"
+      },
+      {
+        "start": 8.14,
+        "end": 8.26,
+        "word": " the"
+      },
+      {
+        "start": 8.26,
+        "end": 8.42,
+        "word": " end"
+      },
+      {
+        "start": 8.42,
+        "end": 8.56,
+        "word": " of"
+      },
+      {
+        "start": 8.56,
+        "end": 8.74,
+        "word": " chapter"
+      },
+      {
+        "start": 8.74,
+        "end": 9.2,
+        "word": " two."
+      },
+      {
+        "start": 10.16,
+        "end": 10.46,
+        "word": " So"
+      },
+      {
+        "start": 10.46,
+        "end": 10.7,
+        "word": " why"
+      },
+      {
+        "start": 10.7,
+        "end": 10.86,
+        "word": " is"
+      },
+      {
+        "start": 10.86,
+        "end": 11.0,
+        "word": " she"
+      },
+      {
+        "start": 11.0,
+        "end": 11.24,
+        "word": " still"
+      },
+      {
+        "start": 11.24,
+        "end": 11.56,
+        "word": " speaking"
+      },
+      {
+        "start": 11.56,
+        "end": 11.82,
+        "word": " in"
+      },
+      {
+        "start": 11.82,
+        "end": 11.96,
+        "word": " chapter"
+      },
+      {
+        "start": 11.96,
+        "end": 12.56,
+        "word": " three?"
+      }
+    ]
+  },
+  {
+    "start": 13.86,
+    "end": 19.92,
+    "text": " This is retcon, backfill for stories. It's an Apache airflow plug-in with the writer's",
+    "words": [
+      {
+        "start": 13.86,
+        "end": 14.0,
+        "word": " This"
+      },
+      {
+        "start": 14.0,
+        "end": 14.16,
+        "word": " is"
+      },
+      {
+        "start": 14.16,
+        "end": 14.64,
+        "word": " retcon,"
+      },
+      {
+        "start": 15.2,
+        "end": 15.74,
+        "word": " backfill"
+      },
+      {
+        "start": 15.74,
+        "end": 16.04,
+        "word": " for"
+      },
+      {
+        "start": 16.04,
+        "end": 16.36,
+        "word": " stories."
+      },
+      {
+        "start": 17.2,
+        "end": 17.4,
+        "word": " It's"
+      },
+      {
+        "start": 17.4,
+        "end": 17.46,
+        "word": " an"
+      },
+      {
+        "start": 17.46,
+        "end": 17.66,
+        "word": " Apache"
+      },
+      {
+        "start": 17.66,
+        "end": 18.12,
+        "word": " airflow"
+      },
+      {
+        "start": 18.12,
+        "end": 18.58,
+        "word": " plug"
+      },
+      {
+        "start": 18.58,
+        "end": 18.92,
+        "word": "-in"
+      },
+      {
+        "start": 18.92,
+        "end": 19.38,
+        "word": " with"
+      },
+      {
+        "start": 19.38,
+        "end": 19.5,
+        "word": " the"
+      },
+      {
+        "start": 19.5,
+        "end": 19.92,
+        "word": " writer's"
+      }
+    ]
+  },
+  {
+    "start": 19.92,
+    "end": 26.04,
+    "text": " workspace built right into airflow. Here's the Aster protocol, a five-chapter mystery.",
+    "words": [
+      {
+        "start": 19.92,
+        "end": 20.26,
+        "word": " workspace"
+      },
+      {
+        "start": 20.26,
+        "end": 20.66,
+        "word": " built"
+      },
+      {
+        "start": 20.66,
+        "end": 20.96,
+        "word": " right"
+      },
+      {
+        "start": 20.96,
+        "end": 21.4,
+        "word": " into"
+      },
+      {
+        "start": 21.4,
+        "end": 21.62,
+        "word": " airflow."
+      },
+      {
+        "start": 22.86,
+        "end": 23.28,
+        "word": " Here's"
+      },
+      {
+        "start": 23.28,
+        "end": 23.4,
+        "word": " the"
+      },
+      {
+        "start": 23.4,
+        "end": 23.66,
+        "word": " Aster"
+      },
+      {
+        "start": 23.66,
+        "end": 24.18,
+        "word": " protocol,"
+      },
+      {
+        "start": 24.78,
+        "end": 24.96,
+        "word": " a"
+      },
+      {
+        "start": 24.96,
+        "end": 25.2,
+        "word": " five"
+      },
+      {
+        "start": 25.2,
+        "end": 25.7,
+        "word": "-chapter"
+      },
+      {
+        "start": 25.7,
+        "end": 26.04,
+        "word": " mystery."
+      }
+    ]
+  },
+  {
+    "start": 26.74,
+    "end": 33.96,
+    "text": " I'm changing Mara's fate. She dies at the end of chapter two. First, let's see what that would break.",
+    "words": [
+      {
+        "start": 26.74,
+        "end": 27.38,
+        "word": " I'm"
+      },
+      {
+        "start": 27.38,
+        "end": 27.58,
+        "word": " changing"
+      },
+      {
+        "start": 27.58,
+        "end": 28.14,
+        "word": " Mara's"
+      },
+      {
+        "start": 28.14,
+        "end": 28.36,
+        "word": " fate."
+      },
+      {
+        "start": 29.12,
+        "end": 29.24,
+        "word": " She"
+      },
+      {
+        "start": 29.24,
+        "end": 29.52,
+        "word": " dies"
+      },
+      {
+        "start": 29.52,
+        "end": 29.94,
+        "word": " at"
+      },
+      {
+        "start": 29.94,
+        "end": 30.04,
+        "word": " the"
+      },
+      {
+        "start": 30.04,
+        "end": 30.18,
+        "word": " end"
+      },
+      {
+        "start": 30.18,
+        "end": 30.34,
+        "word": " of"
+      },
+      {
+        "start": 30.34,
+        "end": 30.48,
+        "word": " chapter"
+      },
+      {
+        "start": 30.48,
+        "end": 30.96,
+        "word": " two."
+      },
+      {
+        "start": 31.9,
+        "end": 32.46,
+        "word": " First,"
+      },
+      {
+        "start": 32.82,
+        "end": 33.14,
+        "word": " let's"
+      },
+      {
+        "start": 33.14,
+        "end": 33.26,
+        "word": " see"
+      },
+      {
+        "start": 33.26,
+        "end": 33.4,
+        "word": " what"
+      },
+      {
+        "start": 33.4,
+        "end": 33.56,
+        "word": " that"
+      },
+      {
+        "start": 33.56,
+        "end": 33.7,
+        "word": " would"
+      },
+      {
+        "start": 33.7,
+        "end": 33.96,
+        "word": " break."
+      }
+    ]
+  },
+  {
+    "start": 35.04,
+    "end": 42.12,
+    "text": " Three later chapters mention her. Two still give her dialogue after she's dead. That's a problem.",
+    "words": [
+      {
+        "start": 35.04,
+        "end": 35.52,
+        "word": " Three"
+      },
+      {
+        "start": 35.52,
+        "end": 35.84,
+        "word": " later"
+      },
+      {
+        "start": 35.84,
+        "end": 36.18,
+        "word": " chapters"
+      },
+      {
+        "start": 36.18,
+        "end": 36.74,
+        "word": " mention"
+      },
+      {
+        "start": 36.74,
+        "end": 37.1,
+        "word": " her."
+      },
+      {
+        "start": 37.94,
+        "end": 38.12,
+        "word": " Two"
+      },
+      {
+        "start": 38.12,
+        "end": 38.48,
+        "word": " still"
+      },
+      {
+        "start": 38.48,
+        "end": 38.72,
+        "word": " give"
+      },
+      {
+        "start": 38.72,
+        "end": 38.88,
+        "word": " her"
+      },
+      {
+        "start": 38.88,
+        "end": 39.24,
+        "word": " dialogue"
+      },
+      {
+        "start": 39.24,
+        "end": 39.7,
+        "word": " after"
+      },
+      {
+        "start": 39.7,
+        "end": 40.24,
+        "word": " she's"
+      },
+      {
+        "start": 40.24,
+        "end": 40.48,
+        "word": " dead."
+      },
+      {
+        "start": 41.42,
+        "end": 41.7,
+        "word": " That's"
+      },
+      {
+        "start": 41.7,
+        "end": 41.76,
+        "word": " a"
+      },
+      {
+        "start": 41.76,
+        "end": 42.12,
+        "word": " problem."
+      }
+    ]
+  },
+  {
+    "start": 43.24,
+    "end": 49.36,
+    "text": " Chapter five only remembers her, so that passage is fine. Now I apply the change.",
+    "words": [
+      {
+        "start": 43.24,
+        "end": 43.42,
+        "word": " Chapter"
+      },
+      {
+        "start": 43.42,
+        "end": 43.94,
+        "word": " five"
+      },
+      {
+        "start": 43.94,
+        "end": 44.22,
+        "word": " only"
+      },
+      {
+        "start": 44.22,
+        "end": 44.68,
+        "word": " remembers"
+      },
+      {
+        "start": 44.68,
+        "end": 45.1,
+        "word": " her,"
+      },
+      {
+        "start": 45.58,
+        "end": 45.72,
+        "word": " so"
+      },
+      {
+        "start": 45.72,
+        "end": 45.88,
+        "word": " that"
+      },
+      {
+        "start": 45.88,
+        "end": 46.2,
+        "word": " passage"
+      },
+      {
+        "start": 46.2,
+        "end": 46.48,
+        "word": " is"
+      },
+      {
+        "start": 46.48,
+        "end": 46.78,
+        "word": " fine."
+      },
+      {
+        "start": 47.78,
+        "end": 48.22,
+        "word": " Now"
+      },
+      {
+        "start": 48.22,
+        "end": 48.6,
+        "word": " I"
+      },
+      {
+        "start": 48.6,
+        "end": 48.78,
+        "word": " apply"
+      },
+      {
+        "start": 48.78,
+        "end": 49.1,
+        "word": " the"
+      },
+      {
+        "start": 49.1,
+        "end": 49.36,
+        "word": " change."
+      }
+    ]
+  },
+  {
+    "start": 49.88,
+    "end": 56.42,
+    "text": " A character canon asset event triggers the repair workflow. I've shortened the model weight here.",
+    "words": [
+      {
+        "start": 49.88,
+        "end": 50.24,
+        "word": " A"
+      },
+      {
+        "start": 50.24,
+        "end": 51.04,
+        "word": " character"
+      },
+      {
+        "start": 51.04,
+        "end": 51.52,
+        "word": " canon"
+      },
+      {
+        "start": 51.52,
+        "end": 51.96,
+        "word": " asset"
+      },
+      {
+        "start": 51.96,
+        "end": 52.32,
+        "word": " event"
+      },
+      {
+        "start": 52.32,
+        "end": 52.68,
+        "word": " triggers"
+      },
+      {
+        "start": 52.68,
+        "end": 53.02,
+        "word": " the"
+      },
+      {
+        "start": 53.02,
+        "end": 53.28,
+        "word": " repair"
+      },
+      {
+        "start": 53.28,
+        "end": 53.64,
+        "word": " workflow."
+      },
+      {
+        "start": 54.82,
+        "end": 55.06,
+        "word": " I've"
+      },
+      {
+        "start": 55.06,
+        "end": 55.24,
+        "word": " shortened"
+      },
+      {
+        "start": 55.24,
+        "end": 55.5,
+        "word": " the"
+      },
+      {
+        "start": 55.5,
+        "end": 55.78,
+        "word": " model"
+      },
+      {
+        "start": 55.78,
+        "end": 56.02,
+        "word": " weight"
+      },
+      {
+        "start": 56.02,
+        "end": 56.42,
+        "word": " here."
+      }
+    ]
+  },
+  {
+    "start": 57.32,
+    "end": 63.56,
+    "text": " Airflow uses dynamic task mapping to send only the broken paragraphs to its common AI provider.",
+    "words": [
+      {
+        "start": 57.32,
+        "end": 57.7,
+        "word": " Airflow"
+      },
+      {
+        "start": 57.7,
+        "end": 58.04,
+        "word": " uses"
+      },
+      {
+        "start": 58.04,
+        "end": 58.5,
+        "word": " dynamic"
+      },
+      {
+        "start": 58.5,
+        "end": 58.94,
+        "word": " task"
+      },
+      {
+        "start": 58.94,
+        "end": 59.32,
+        "word": " mapping"
+      },
+      {
+        "start": 59.32,
+        "end": 60.0,
+        "word": " to"
+      },
+      {
+        "start": 60.0,
+        "end": 60.2,
+        "word": " send"
+      },
+      {
+        "start": 60.2,
+        "end": 60.6,
+        "word": " only"
+      },
+      {
+        "start": 60.6,
+        "end": 60.76,
+        "word": " the"
+      },
+      {
+        "start": 60.76,
+        "end": 61.02,
+        "word": " broken"
+      },
+      {
+        "start": 61.02,
+        "end": 61.4,
+        "word": " paragraphs"
+      },
+      {
+        "start": 61.4,
+        "end": 62.3,
+        "word": " to"
+      },
+      {
+        "start": 62.3,
+        "end": 62.44,
+        "word": " its"
+      },
+      {
+        "start": 62.44,
+        "end": 62.72,
+        "word": " common"
+      },
+      {
+        "start": 62.72,
+        "end": 63.08,
+        "word": " AI"
+      },
+      {
+        "start": 63.08,
+        "end": 63.56,
+        "word": " provider."
+      }
+    ]
+  },
+  {
+    "start": 64.8,
+    "end": 70.88,
+    "text": " The model proposes replacements. Retcon checks them. In this run, one needed a",
+    "words": [
+      {
+        "start": 64.8,
+        "end": 64.92,
+        "word": " The"
+      },
+      {
+        "start": 64.92,
+        "end": 65.18,
+        "word": " model"
+      },
+      {
+        "start": 65.18,
+        "end": 65.74,
+        "word": " proposes"
+      },
+      {
+        "start": 65.74,
+        "end": 66.08,
+        "word": " replacements."
+      },
+      {
+        "start": 67.3,
+        "end": 67.54,
+        "word": " Retcon"
+      },
+      {
+        "start": 67.54,
+        "end": 67.9,
+        "word": " checks"
+      },
+      {
+        "start": 67.9,
+        "end": 68.24,
+        "word": " them."
+      },
+      {
+        "start": 69.08,
+        "end": 69.34,
+        "word": " In"
+      },
+      {
+        "start": 69.34,
+        "end": 69.48,
+        "word": " this"
+      },
+      {
+        "start": 69.48,
+        "end": 69.76,
+        "word": " run,"
+      },
+      {
+        "start": 70.22,
+        "end": 70.46,
+        "word": " one"
+      },
+      {
+        "start": 70.46,
+        "end": 70.72,
+        "word": " needed"
+      },
+      {
+        "start": 70.72,
+        "end": 70.88,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 70.88,
+    "end": 77.24,
+    "text": " corrective attempt before it passed. Then airflow stops at its native human approval task.",
+    "words": [
+      {
+        "start": 70.88,
+        "end": 71.2,
+        "word": " corrective"
+      },
+      {
+        "start": 71.2,
+        "end": 71.62,
+        "word": " attempt"
+      },
+      {
+        "start": 71.62,
+        "end": 72.18,
+        "word": " before"
+      },
+      {
+        "start": 72.18,
+        "end": 72.44,
+        "word": " it"
+      },
+      {
+        "start": 72.44,
+        "end": 72.7,
+        "word": " passed."
+      },
+      {
+        "start": 74.18,
+        "end": 74.22,
+        "word": " Then"
+      },
+      {
+        "start": 74.22,
+        "end": 74.56,
+        "word": " airflow"
+      },
+      {
+        "start": 74.56,
+        "end": 75.02,
+        "word": " stops"
+      },
+      {
+        "start": 75.02,
+        "end": 75.44,
+        "word": " at"
+      },
+      {
+        "start": 75.44,
+        "end": 75.58,
+        "word": " its"
+      },
+      {
+        "start": 75.58,
+        "end": 75.86,
+        "word": " native"
+      },
+      {
+        "start": 75.86,
+        "end": 76.3,
+        "word": " human"
+      },
+      {
+        "start": 76.3,
+        "end": 76.76,
+        "word": " approval"
+      },
+      {
+        "start": 76.76,
+        "end": 77.24,
+        "word": " task."
+      }
+    ]
+  },
+  {
+    "start": 77.88,
+    "end": 82.18,
+    "text": " The original manuscript stays intact while the writer reviews the changes.",
+    "words": [
+      {
+        "start": 77.88,
+        "end": 78.48,
+        "word": " The"
+      },
+      {
+        "start": 78.48,
+        "end": 78.78,
+        "word": " original"
+      },
+      {
+        "start": 78.78,
+        "end": 79.24,
+        "word": " manuscript"
+      },
+      {
+        "start": 79.24,
+        "end": 79.66,
+        "word": " stays"
+      },
+      {
+        "start": 79.66,
+        "end": 79.98,
+        "word": " intact"
+      },
+      {
+        "start": 79.98,
+        "end": 80.76,
+        "word": " while"
+      },
+      {
+        "start": 80.76,
+        "end": 80.88,
+        "word": " the"
+      },
+      {
+        "start": 80.88,
+        "end": 81.1,
+        "word": " writer"
+      },
+      {
+        "start": 81.1,
+        "end": 81.56,
+        "word": " reviews"
+      },
+      {
+        "start": 81.56,
+        "end": 81.9,
+        "word": " the"
+      },
+      {
+        "start": 81.9,
+        "end": 82.18,
+        "word": " changes."
+      }
+    ]
+  },
+  {
+    "start": 83.18,
+    "end": 87.66,
+    "text": " Passing a check doesn't make something good writing. The author still decides.",
+    "words": [
+      {
+        "start": 83.18,
+        "end": 83.78,
+        "word": " Passing"
+      },
+      {
+        "start": 83.78,
+        "end": 83.98,
+        "word": " a"
+      },
+      {
+        "start": 83.98,
+        "end": 84.14,
+        "word": " check"
+      },
+      {
+        "start": 84.14,
+        "end": 84.6,
+        "word": " doesn't"
+      },
+      {
+        "start": 84.6,
+        "end": 84.74,
+        "word": " make"
+      },
+      {
+        "start": 84.74,
+        "end": 85.02,
+        "word": " something"
+      },
+      {
+        "start": 85.02,
+        "end": 85.38,
+        "word": " good"
+      },
+      {
+        "start": 85.38,
+        "end": 85.7,
+        "word": " writing."
+      },
+      {
+        "start": 86.56,
+        "end": 86.58,
+        "word": " The"
+      },
+      {
+        "start": 86.58,
+        "end": 86.8,
+        "word": " author"
+      },
+      {
+        "start": 86.8,
+        "end": 87.26,
+        "word": " still"
+      },
+      {
+        "start": 87.26,
+        "end": 87.66,
+        "word": " decides."
+      }
+    ]
+  },
+  {
+    "start": 89.02,
+    "end": 94.9,
+    "text": " Here are the versions side by side. Evo takes over Mara's dialogue while the surrounding",
+    "words": [
+      {
+        "start": 89.02,
+        "end": 89.32,
+        "word": " Here"
+      },
+      {
+        "start": 89.32,
+        "end": 89.52,
+        "word": " are"
+      },
+      {
+        "start": 89.52,
+        "end": 89.62,
+        "word": " the"
+      },
+      {
+        "start": 89.62,
+        "end": 89.92,
+        "word": " versions"
+      },
+      {
+        "start": 89.92,
+        "end": 90.34,
+        "word": " side"
+      },
+      {
+        "start": 90.34,
+        "end": 90.56,
+        "word": " by"
+      },
+      {
+        "start": 90.56,
+        "end": 91.1,
+        "word": " side."
+      },
+      {
+        "start": 91.98,
+        "end": 92.4,
+        "word": " Evo"
+      },
+      {
+        "start": 92.4,
+        "end": 92.66,
+        "word": " takes"
+      },
+      {
+        "start": 92.66,
+        "end": 92.92,
+        "word": " over"
+      },
+      {
+        "start": 92.92,
+        "end": 93.36,
+        "word": " Mara's"
+      },
+      {
+        "start": 93.36,
+        "end": 93.54,
+        "word": " dialogue"
+      },
+      {
+        "start": 93.54,
+        "end": 94.42,
+        "word": " while"
+      },
+      {
+        "start": 94.42,
+        "end": 94.56,
+        "word": " the"
+      },
+      {
+        "start": 94.56,
+        "end": 94.9,
+        "word": " surrounding"
+      }
+    ]
+  },
+  {
+    "start": 94.9,
+    "end": 100.08,
+    "text": " paragraphs stay as they were. I'm happy with these changes, so I'll approve them.",
+    "words": [
+      {
+        "start": 94.9,
+        "end": 95.3,
+        "word": " paragraphs"
+      },
+      {
+        "start": 95.3,
+        "end": 95.86,
+        "word": " stay"
+      },
+      {
+        "start": 95.86,
+        "end": 96.16,
+        "word": " as"
+      },
+      {
+        "start": 96.16,
+        "end": 96.3,
+        "word": " they"
+      },
+      {
+        "start": 96.3,
+        "end": 96.56,
+        "word": " were."
+      },
+      {
+        "start": 97.44,
+        "end": 97.9,
+        "word": " I'm"
+      },
+      {
+        "start": 97.9,
+        "end": 98.08,
+        "word": " happy"
+      },
+      {
+        "start": 98.08,
+        "end": 98.34,
+        "word": " with"
+      },
+      {
+        "start": 98.34,
+        "end": 98.5,
+        "word": " these"
+      },
+      {
+        "start": 98.5,
+        "end": 98.74,
+        "word": " changes,"
+      },
+      {
+        "start": 99.26,
+        "end": 99.42,
+        "word": " so"
+      },
+      {
+        "start": 99.42,
+        "end": 99.6,
+        "word": " I'll"
+      },
+      {
+        "start": 99.6,
+        "end": 99.78,
+        "word": " approve"
+      },
+      {
+        "start": 99.78,
+        "end": 100.08,
+        "word": " them."
+      }
+    ]
+  },
+  {
+    "start": 101.04,
+    "end": 105.28,
+    "text": " I could also keep the original. Approval resumes the airflow workflow.",
+    "words": [
+      {
+        "start": 101.04,
+        "end": 101.14,
+        "word": " I"
+      },
+      {
+        "start": 101.14,
+        "end": 101.24,
+        "word": " could"
+      },
+      {
+        "start": 101.24,
+        "end": 101.42,
+        "word": " also"
+      },
+      {
+        "start": 101.42,
+        "end": 101.76,
+        "word": " keep"
+      },
+      {
+        "start": 101.76,
+        "end": 101.98,
+        "word": " the"
+      },
+      {
+        "start": 101.98,
+        "end": 102.16,
+        "word": " original."
+      },
+      {
+        "start": 103.48,
+        "end": 103.82,
+        "word": " Approval"
+      },
+      {
+        "start": 103.82,
+        "end": 104.08,
+        "word": " resumes"
+      },
+      {
+        "start": 104.08,
+        "end": 104.52,
+        "word": " the"
+      },
+      {
+        "start": 104.52,
+        "end": 104.7,
+        "word": " airflow"
+      },
+      {
+        "start": 104.7,
+        "end": 105.28,
+        "word": " workflow."
+      }
+    ]
+  },
+  {
+    "start": 106.24,
+    "end": 112.16,
+    "text": " Retcon publishes a new manuscript version and airflow records the published manuscript asset event.",
+    "words": [
+      {
+        "start": 106.24,
+        "end": 106.7,
+        "word": " Retcon"
+      },
+      {
+        "start": 106.7,
+        "end": 107.22,
+        "word": " publishes"
+      },
+      {
+        "start": 107.22,
+        "end": 107.48,
+        "word": " a"
+      },
+      {
+        "start": 107.48,
+        "end": 107.68,
+        "word": " new"
+      },
+      {
+        "start": 107.68,
+        "end": 108.06,
+        "word": " manuscript"
+      },
+      {
+        "start": 108.06,
+        "end": 108.64,
+        "word": " version"
+      },
+      {
+        "start": 108.64,
+        "end": 109.28,
+        "word": " and"
+      },
+      {
+        "start": 109.28,
+        "end": 109.52,
+        "word": " airflow"
+      },
+      {
+        "start": 109.52,
+        "end": 110.06,
+        "word": " records"
+      },
+      {
+        "start": 110.06,
+        "end": 110.4,
+        "word": " the"
+      },
+      {
+        "start": 110.4,
+        "end": 110.76,
+        "word": " published"
+      },
+      {
+        "start": 110.76,
+        "end": 111.32,
+        "word": " manuscript"
+      },
+      {
+        "start": 111.32,
+        "end": 111.74,
+        "word": " asset"
+      },
+      {
+        "start": 111.74,
+        "end": 112.16,
+        "word": " event."
+      }
+    ]
+  },
+  {
+    "start": 113.08,
+    "end": 117.68,
+    "text": " Three chapters checked, two paragraphs repaired, three chapters untouched.",
+    "words": [
+      {
+        "start": 113.08,
+        "end": 113.5,
+        "word": " Three"
+      },
+      {
+        "start": 113.5,
+        "end": 113.86,
+        "word": " chapters"
+      },
+      {
+        "start": 113.86,
+        "end": 114.28,
+        "word": " checked,"
+      },
+      {
+        "start": 114.88,
+        "end": 115.04,
+        "word": " two"
+      },
+      {
+        "start": 115.04,
+        "end": 115.36,
+        "word": " paragraphs"
+      },
+      {
+        "start": 115.36,
+        "end": 116.0,
+        "word": " repaired,"
+      },
+      {
+        "start": 116.68,
+        "end": 116.84,
+        "word": " three"
+      },
+      {
+        "start": 116.84,
+        "end": 117.3,
+        "word": " chapters"
+      },
+      {
+        "start": 117.3,
+        "end": 117.68,
+        "word": " untouched."
+      }
+    ]
+  },
+  {
+    "start": 119.18,
+    "end": 126.32,
+    "text": " And here's chapter five. Sarah still remembers Mara's laugh. That memory belongs in the story.",
+    "words": [
+      {
+        "start": 119.18,
+        "end": 119.22,
+        "word": " And"
+      },
+      {
+        "start": 119.22,
+        "end": 119.62,
+        "word": " here's"
+      },
+      {
+        "start": 119.62,
+        "end": 119.78,
+        "word": " chapter"
+      },
+      {
+        "start": 119.78,
+        "end": 120.4,
+        "word": " five."
+      },
+      {
+        "start": 121.5,
+        "end": 121.78,
+        "word": " Sarah"
+      },
+      {
+        "start": 121.78,
+        "end": 122.14,
+        "word": " still"
+      },
+      {
+        "start": 122.14,
+        "end": 122.6,
+        "word": " remembers"
+      },
+      {
+        "start": 122.6,
+        "end": 123.14,
+        "word": " Mara's"
+      },
+      {
+        "start": 123.14,
+        "end": 123.4,
+        "word": " laugh."
+      },
+      {
+        "start": 124.54,
+        "end": 124.64,
+        "word": " That"
+      },
+      {
+        "start": 124.64,
+        "end": 125.02,
+        "word": " memory"
+      },
+      {
+        "start": 125.02,
+        "end": 125.44,
+        "word": " belongs"
+      },
+      {
+        "start": 125.44,
+        "end": 125.84,
+        "word": " in"
+      },
+      {
+        "start": 125.84,
+        "end": 125.94,
+        "word": " the"
+      },
+      {
+        "start": 125.94,
+        "end": 126.32,
+        "word": " story."
+      }
+    ]
+  },
+  {
+    "start": 127.4,
+    "end": 131.28,
+    "text": " I can now export the revised manuscript as markdown and keep writing.",
+    "words": [
+      {
+        "start": 127.4,
+        "end": 127.64,
+        "word": " I"
+      },
+      {
+        "start": 127.64,
+        "end": 127.74,
+        "word": " can"
+      },
+      {
+        "start": 127.74,
+        "end": 127.96,
+        "word": " now"
+      },
+      {
+        "start": 127.96,
+        "end": 128.32,
+        "word": " export"
+      },
+      {
+        "start": 128.32,
+        "end": 128.56,
+        "word": " the"
+      },
+      {
+        "start": 128.56,
+        "end": 128.84,
+        "word": " revised"
+      },
+      {
+        "start": 128.84,
+        "end": 129.46,
+        "word": " manuscript"
+      },
+      {
+        "start": 129.46,
+        "end": 129.74,
+        "word": " as"
+      },
+      {
+        "start": 129.74,
+        "end": 130.24,
+        "word": " markdown"
+      },
+      {
+        "start": 130.24,
+        "end": 130.74,
+        "word": " and"
+      },
+      {
+        "start": 130.74,
+        "end": 130.96,
+        "word": " keep"
+      },
+      {
+        "start": 130.96,
+        "end": 131.28,
+        "word": " writing."
+      }
+    ]
+  },
+  {
+    "start": 132.26,
+    "end": 137.92,
+    "text": " That's retcon. One plugin from a story change to an approved revision.",
+    "words": [
+      {
+        "start": 132.26,
+        "end": 133.02,
+        "word": " That's"
+      },
+      {
+        "start": 133.02,
+        "end": 133.46,
+        "word": " retcon."
+      },
+      {
+        "start": 134.26,
+        "end": 134.66,
+        "word": " One"
+      },
+      {
+        "start": 134.66,
+        "end": 135.0,
+        "word": " plugin"
+      },
+      {
+        "start": 135.0,
+        "end": 135.78,
+        "word": " from"
+      },
+      {
+        "start": 135.78,
+        "end": 135.9,
+        "word": " a"
+      },
+      {
+        "start": 135.9,
+        "end": 136.18,
+        "word": " story"
+      },
+      {
+        "start": 136.18,
+        "end": 136.44,
+        "word": " change"
+      },
+      {
+        "start": 136.44,
+        "end": 136.9,
+        "word": " to"
+      },
+      {
+        "start": 136.9,
+        "end": 137.0,
+        "word": " an"
+      },
+      {
+        "start": 137.0,
+        "end": 137.22,
+        "word": " approved"
+      },
+      {
+        "start": 137.22,
+        "end": 137.92,
+        "word": " revision."
+      }
+    ]
+  },
+  {
+    "start": 138.66,
+    "end": 141.74,
+    "text": " Change the past, keep your story whole.",
+    "words": [
+      {
+        "start": 138.66,
+        "end": 139.04,
+        "word": " Change"
+      },
+      {
+        "start": 139.04,
+        "end": 139.38,
+        "word": " the"
+      },
+      {
+        "start": 139.38,
+        "end": 139.64,
+        "word": " past,"
+      },
+      {
+        "start": 140.3,
+        "end": 140.58,
+        "word": " keep"
+      },
+      {
+        "start": 140.58,
+        "end": 140.96,
+        "word": " your"
+      },
+      {
+        "start": 140.96,
+        "end": 141.28,
+        "word": " story"
+      },
+      {
+        "start": 141.28,
+        "end": 141.74,
+        "word": " whole."
+      }
+    ]
+  }
+]
