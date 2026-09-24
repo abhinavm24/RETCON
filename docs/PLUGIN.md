@@ -79,12 +79,8 @@ RETCON supports one writer and one active revision at a time.
 
 This is a single-user hackathon demo. Start native Airflow with `AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True` and `AIRFLOW__API__HOST=127.0.0.1` to skip its login screen while keeping the demo local. RETCON forwards Airflow's native session to workflow API calls; it has no separate account or role system. The model/key setup remains in the writer UI, backed by an encrypted Airflow Connection.
 
-## Pitch and evidence
+## Verification
 
-**“Airflow is the writing room: install one package, configure a model, change the past, and review the consequences without leaving the app.”**
-
-For Plugin Powerhouse, demonstrate Airflow's plugin listing and the embedded RETCON navigation first. For the wildcard category, lead with the character-death cascade and reveal that the entire workspace lives in Airflow. Only one category should be submitted.
-
-The exact tested versions, installation checks, and completed workflow evidence are maintained in [VERIFICATION.md](VERIFICATION.md).
+For a new installation, confirm plugin discovery and both DAGs without import errors, then complete the [sample workflow](../README.md#try-it) through publication. Run the [development checks](../README.md#development) after code changes.
 
 Sources: [Airflow 3.3.2 plugins](https://airflow.apache.org/docs/apache-airflow/3.3.2/administration-and-deployment/plugins.html), [Airflow 3.3.2 DAG bundles](https://airflow.apache.org/docs/apache-airflow/3.3.2/administration-and-deployment/dag-bundles.html), [Common AI connections](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/connections/pydantic_ai.html), [Connection lookup precedence](https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/secrets-backend/index.html).

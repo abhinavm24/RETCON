@@ -13,6 +13,10 @@ playwright-report/
 test-results/
 logs/
 
+# Generated recordings and submission assets
+output/
+.playwright-cli/
+
 # Python distribution artifacts
 build/
 dist/

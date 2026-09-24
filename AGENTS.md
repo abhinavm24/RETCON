@@ -19,16 +19,7 @@ For installation into an existing Airflow deployment, bundle configuration, or d
 
 ## Walk through the demo
 
-Use a fresh **The Aster Protocol** sample, preserving any user-created draft.
-
-1. Select **Mara → dies at the end of chapter 2**.
-2. Choose **Inspect the ripple**. Expect chapters **3, 4, 5** to be affected and dialogue violations in **3 and 4**.
-3. Apply the revision. Show the quoted violations and the actual Airflow run link.
-4. Review **Changes**, then approve through the writer UI. Publication resumes the native Airflow HITL task.
-5. Confirm **3 chapters checked, 2 paragraphs repaired, 3 chapters untouched**. Chapter 5's memory of Mara remains valid.
-6. Export Markdown or continue editing.
-
-The model's latency varies. Show real progress and failures; verify publication before reporting success. Keep examples within the implemented death-boundary operation and explicit continuity rules. For a recording, follow `docs/DEMO_SCRIPT.md`.
+Follow the README's [sample workflow](README.md#try-it) using a fresh **The Aster Protocol** sample, preserving any user-created draft. Confirm its expected results and the actual Airflow run link. The model's latency varies: show real progress and failures, and verify publication before reporting success. Keep examples within the implemented death-boundary operation and explicit continuity rules.
 
 ## Find the implementation
 
@@ -41,7 +32,7 @@ The model's latency varies. Show real progress and failures; verify publication 
 | Vanilla HTML/CSS/JavaScript UI | `src/retcon/web/` |
 | Local launchers | `Dockerfile`, `compose.yaml`, `scripts/local-demo` |
 
-Read `docs/BUILD_PLAN.md` for the workflow overview. Model calls use the Common AI provider and `retcon_openrouter` Connection. Story state is a separate JSON store. The published manuscript stays intact until approval; invalid or incomplete repairs cannot publish.
+For workflow changes, read the [workflow overview](README.md#how-it-works). Model calls use the Common AI provider and `retcon_openrouter` Connection. Story state is a separate JSON store. The published manuscript stays intact until approval; invalid or incomplete repairs cannot publish.
 
 ## Verify changes
 

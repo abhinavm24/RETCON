@@ -131,13 +131,6 @@ uv run ruff check src tests
 uv build
 ```
 
-Verified on Airflow **3.3.2**: **131 tests pass**, and the real model-to-approval workflow completes successfully.
-
-- [Plugin configuration](docs/PLUGIN.md)
-- [Implementation overview](docs/BUILD_PLAN.md)
-- [2:45 demo script](docs/DEMO_SCRIPT.md)
-- [Verification](docs/VERIFICATION.md)
-- [Hackathon brief](docs/JUDGE_BRIEF.md)
-- [Submission description](docs/SUBMISSION.md)
+For deployment configuration, DAG discovery, and troubleshooting, see [Plugin configuration](docs/PLUGIN.md).
 
 MIT licensed. The included fiction is original sample content.
