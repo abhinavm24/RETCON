@@ -2,7 +2,13 @@
 
 **Every data engineer knows backfill. Novelists call it retcon.**
 
-RETCON is an Airflow 3.3 plugin that checks how a story change affects later chapters, repairs contradictory paragraphs with AI, and lets the writer approve the result.
+A character dies in chapter two, but still speaks in chapter three. Fixing that change means finding every affected passage without rewriting the parts that still work.
+
+RETCON turns that problem into an Airflow workflow. Its embedded writer workspace lets an author inspect continuity failures, compare AI-generated paragraph repairs, approve or reject the revision, and export the manuscript as Markdown.
+
+Packaged as an installable Apache Airflow 3.3 plugin, RETCON includes the writer UI, API, and a native DAG bundle. Writers can import a draft, edit chapters, and review revisions without leaving the workspace.
+
+**[Watch the 2:23 demo](https://youtu.be/A4f05--U_RM)** · [Explore the interactive walkthrough](https://app.supademo.com/demo/cmufw8btg06hnqm3kqghk1kf1)
 
 ## Quick start
 
@@ -67,7 +73,7 @@ Restart your Airflow components. The wheel includes the writer UI, API, and both
 5. Approve or reject. Approval publishes the canon and text together.
 6. Export Markdown, continue editing, or reset the sample.
 
-Chapter 5 remembers Mara without giving her live dialogue, so it stays unchanged. Writers can also import Markdown/plain text, edit chapters, inspect failures, and cancel a revision.
+The result: **3 dependent chapters checked, 2 contradictory paragraphs repaired, and 3 chapters untouched.** Chapter 5 remembers Mara without giving her live dialogue, so it stays unchanged. Writers can also inspect failures and cancel a revision.
 
 ## How it works
 
@@ -80,13 +86,39 @@ flowchart LR
     L --> V[Validate replacements]
     V --> H[Native HITL approval]
     H --> P[Publish canon and text]
+    P --> M[Published-manuscript Asset event]
 ```
 
-RETCON identifies story dependencies. Airflow handles asset scheduling, task mapping, retries, and the human decision. Invalid model output gets one corrective attempt; failure leaves the published manuscript intact.
+A character-canon Asset event triggers `retcon_cascade`. RETCON identifies the affected passages and checks them against the proposed canon. Dynamic task mapping sends only failing paragraphs to the Common AI provider's `@task.llm`.
+
+RETCON validates each replacement and gives rejected suggestions one corrective attempt. A native `HITLOperator` then waits for the author's decision, submitted through the writer UI using Airflow REST API v2. Approval publishes the manuscript and canon together and emits a published-manuscript Asset event. Rejection or failure leaves the published manuscript intact.
+
+RETCON maintains manuscript and chapter versions; Airflow Asset events carry the revision ID that connects the workflows. “Backfill for stories” is the analogy: the demo uses asset-triggered revision runs, not Airflow's historical backfill endpoint.
+
+## Airflow features used
+
+| Feature | Role in RETCON |
+| --- | --- |
+| `AirflowPlugin`, `fastapi_apps`, and `external_views` | Host the writer UI and API inside Airflow |
+| Native DAG bundle | Discover the packaged workflows without copying DAG files |
+| Assets, event metadata, and asset-triggered scheduling | Connect a character-canon change to its repair workflow |
+| TaskFlow and dynamic task mapping | Check dependent chapters and create repair tasks only for failing paragraphs |
+| Common AI `@task.llm` and Airflow Connections | Run model calls using the model and credential configured in the writer UI |
+| Task retries and corrective repair | Retry task failures and give invalid replacements one attempt with validation feedback |
+| Native `HITLOperator` and REST API v2 | Pause for the author's decision and resume from the writer workspace |
+| Published-manuscript output Asset | Record successful publication as an Asset event |
+
+Built with **Python, Apache Airflow 3.3, FastAPI, the Common AI provider, OpenRouter, Gemma, HTML, CSS, JavaScript, and Docker**.
+
+## Design challenges
+
+The main challenge was separating story knowledge from orchestration. Airflow does not understand fictional continuity, so RETCON maintains explicit character references and deterministic checks, while Airflow schedules and coordinates the work.
+
+Generated prose cannot be trusted just because the model says it is valid. Replacements are checked before review and again before publication. The author's decision resumes a native Airflow HITL task, while the original manuscript remains intact until approval.
+
+## Scope and state
 
 The automated change is a character's death after a chosen chapter. Deterministic checks cover attributed dialogue after death, backwards scene time, and conflicting scene locations. Imported drafts use named dialogue for character indexing; scene times and locations are not inferred.
-
-## State
 
 This is a single-writer demo with one active revision at a time. State lives in `$AIRFLOW_HOME/retcon`. If API and worker processes run on separate hosts, they must share a persistent directory through `RETCON_STATE_DIR`.
 

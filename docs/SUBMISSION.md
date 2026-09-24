@@ -1,6 +1,6 @@
 # RETCON — Backfill for stories
 
-**Category:** Airflow Can Do That?!
+**Category:** Plugin Powerhouse
 
 **One-line pitch:** Every data engineer knows backfill. Novelists call it retcon.
 
@@ -24,10 +24,11 @@ Apache Airflow 3.3, a standard `airflow.plugins` package entry point, `AirflowPl
 
 This is a single-writer prototype using shared persistent filesystem state; API and worker components must access the same state directory. The automated canon edit is a character's death after a chosen chapter. The checks are narrow, and arbitrary manuscript semantics remain an editorial judgement. The backfill connection is a product analogy; the demo uses asset-triggered revision runs, not Airflow's historical-interval backfill endpoint.
 
-## Submission fields to fill
+## Submission links
 
-- Public repository URL: pending publication.
-- Public demo URL, no longer than three minutes: pending recording/upload.
-- Local run instructions: repository README.
+- [Public repository](https://github.com/abhinavm24/RETCON)
+- [Demo video — 2:23](https://youtu.be/A4f05--U_RM)
+- [Interactive walkthrough](https://app.supademo.com/demo/cmufw8btg06hnqm3kqghk1kf1)
+- [Local run instructions](../README.md#quick-start)
 
 The project is MIT licensed and uses original synthetic fiction. No credentials belong in the repository, recording, or written submission.
