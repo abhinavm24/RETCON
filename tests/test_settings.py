@@ -239,3 +239,143 @@ def test_invalid_model_names_are_rejected_without_revealing_a_key(plugin_client,
     response = configure(client, model=model)
     assert response.status_code == 409
     assert FIXTURE_KEY not in response.text
+
+
+LOCAL_MODEL = "qwen3.8-27b-uncensored-mlx"
+LOCAL_URL = "http://127.0.0.1:1234/v1"
+
+
+def local_body(**updates):
+    return {"provider": "openai", "model": LOCAL_MODEL, "base_url": LOCAL_URL, **updates}
+
+
+def successful_provider(monkeypatch):
+    provider = Mock(return_value=httpx.Response(200, json={
+        "choices": [{"finish_reason": "stop", "message": {"content": "RETCON READY"}}]
+    }))
+    monkeypatch.setattr(settings.httpx, "post", provider)
+    return provider
+
+
+def test_keyless_local_setup_saves_native_chat_connection_and_enables_revision(plugin_client, connection_store):
+    client, backend = plugin_client
+    connection_store.conf.get.return_value = ""
+    response = client.put("/api/settings", json=local_body())
+    assert response.status_code == 200
+    assert response.json()["configured"] is True
+    assert response.json()["key_present"] is False
+    assert response.json()["provider"] == "openai"
+    assert response.json()["model"] == LOCAL_MODEL
+    assert response.json()["base_url"] == LOCAL_URL
+    assert connection_store.connection.host == LOCAL_URL
+    assert connection_store.connection.extra_dejson == {"model": "openai-chat:" + LOCAL_MODEL}
+    assert connection_store.connection.password == settings.LOCAL_NO_KEY
+    assert settings.LOCAL_NO_KEY not in response.text
+    started = client.post("/api/retcons", json=retcon_body())
+    assert started.status_code == 202
+    backend.trigger.assert_called_once_with(started.json()["id"])
+
+
+def test_switch_to_local_never_sends_or_retains_openrouter_key(plugin_client, connection_store, monkeypatch):
+    client, _ = plugin_client
+    configure(client)
+    provider = successful_provider(monkeypatch)
+    tested = client.post("/api/settings/test", json=local_body(api_key=""))
+    assert tested.json()["ok"] is True
+    assert provider.call_args.args == (LOCAL_URL + "/chat/completions",)
+    assert "Authorization" not in provider.call_args.kwargs["headers"]
+    assert "X-Title" not in provider.call_args.kwargs["headers"]
+    assert "reasoning" not in provider.call_args.kwargs["json"]
+    assert FIXTURE_KEY not in str(provider.call_args)
+    # Testing unsaved settings leaves the current connection intact.
+    assert connection_store.connection.password == FIXTURE_KEY
+    saved = client.put("/api/settings", json=local_body(api_key=""))
+    assert saved.status_code == 200
+    assert connection_store.connection.password == settings.LOCAL_NO_KEY
+    assert saved.json()["key_present"] is False
+    assert configure(client, key="").status_code == 409
+    assert connection_store.connection.extra_dejson["model"] == "openai-chat:" + LOCAL_MODEL
+
+
+def test_local_endpoint_key_is_reused_only_for_same_normalized_endpoint(plugin_client, connection_store, monkeypatch):
+    client, _ = plugin_client
+    key = "fixture-local-server-token"
+    assert client.put("/api/settings", json=local_body(api_key=key)).status_code == 200
+    provider = successful_provider(monkeypatch)
+    same = client.post("/api/settings/test", json=local_body(base_url=LOCAL_URL + "/", api_key=" "))
+    assert same.json()["ok"] is True
+    assert provider.call_args.kwargs["headers"]["Authorization"] == "Bearer " + key
+    changed = client.post("/api/settings/test", json=local_body(base_url="http://localhost:2345/v1"))
+    assert changed.json()["ok"] is True
+    assert "Authorization" not in provider.call_args.kwargs["headers"]
+    saved = client.put("/api/settings", json=local_body(base_url="http://localhost:2345/v1"))
+    assert saved.status_code == 200
+    assert saved.json()["key_present"] is False
+    assert connection_store.connection.password == settings.LOCAL_NO_KEY
+
+
+def test_local_api_key_requires_encrypted_storage_and_is_never_returned(plugin_client, connection_store):
+    client, _ = plugin_client
+    key = "fixture-local-server-token"
+    connection_store.conf.get.return_value = ""
+    assert client.put("/api/settings", json=local_body(api_key=key)).status_code == 409
+    assert connection_store.connection is None
+    connection_store.conf.get.return_value = "fixture-fernet"
+    saved = client.put("/api/settings", json=local_body(api_key=key))
+    assert saved.status_code == 200
+    assert saved.json()["key_present"] is True
+    assert key not in saved.text
+    assert key not in client.get("/api/settings").text
+
+
+@pytest.mark.parametrize("base_url", [
+    "file:///tmp/socket", "ftp://127.0.0.1/v1", "http:///v1", "http://user:secret@localhost/v1",
+    "http://localhost/v1?key=secret", "http://localhost/v1#secret", "http://localhost:invalid/v1",
+    "http://local host/v1", "http://localhost\\example.com/v1",
+])
+def test_bad_endpoint_is_rejected_before_credentials_or_network_are_touched(plugin_client, connection_store, monkeypatch, base_url):
+    client, _ = plugin_client
+    configure(client)
+    provider = successful_provider(monkeypatch)
+    for path, method in (("/api/settings", client.put), ("/api/settings/test", client.post)):
+        response = method(path, json=local_body(base_url=base_url))
+        assert response.status_code == 409
+        assert "secret" not in response.text
+    assert connection_store.connection.password == FIXTURE_KEY
+    provider.assert_not_called()
+
+
+@pytest.mark.parametrize("base_url,expected", [
+    (" HTTP://LOCALHOST:80/v1/ ", "http://localhost/v1"),
+    ("https://EXAMPLE.COM:443/v1/", "https://example.com/v1"),
+    ("http://[::1]:1234/v1/", "http://[::1]:1234/v1"),
+])
+def test_endpoint_normalization(base_url, expected):
+    assert settings.normalize_base_url(base_url) == expected
+
+
+def test_local_network_and_provider_errors_do_not_echo_keys_or_server_body(plugin_client, monkeypatch):
+    client, _ = plugin_client
+    secret = "fixture-local-server-token"
+    provider = Mock(side_effect=httpx.ConnectError(secret))
+    monkeypatch.setattr(settings.httpx, "post", provider)
+    failed = client.post("/api/settings/test", json=local_body(api_key=secret))
+    assert failed.status_code == 200
+    assert failed.json()["ok"] is False
+    assert secret not in failed.text
+    provider.side_effect = None
+    provider.return_value = httpx.Response(500, json={"error": "private-provider-body " + secret})
+    failed = client.post("/api/settings/test", json=local_body(api_key=secret))
+    assert failed.json()["ok"] is False
+    assert secret not in failed.text
+    assert "private-provider-body" not in failed.text
+
+
+def test_local_settings_are_locked_for_active_revision(plugin_client, connection_store):
+    client, _ = plugin_client
+    configure(client)
+    workflow.start_retcon(**retcon_body())
+    response = client.put("/api/settings", json=local_body())
+    assert response.status_code == 409
+    assert connection_store.connection.password == FIXTURE_KEY
+    assert connection_store.connection.extra_dejson["model"].startswith("openrouter:")

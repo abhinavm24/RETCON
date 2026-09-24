@@ -1,5 +1,6 @@
 """Writer workspace mounted and authenticated by the RETCON Airflow plugin."""
 from importlib.resources import files
+from typing import Literal
 from urllib.parse import quote
 
 from fastapi import FastAPI, HTTPException, Request
@@ -42,6 +43,8 @@ class ImportRequest(BaseModel):
 
 
 class ModelSettings(BaseModel):
+    provider: Literal["openrouter", "openai"] = "openrouter"
+    base_url: str | None = Field(default=None, max_length=2000)
     model: str = Field(default=settings.DEFAULT_MODEL, min_length=3, max_length=160)
     api_key: str | None = Field(default=None, max_length=512, repr=False)
 
@@ -108,12 +111,12 @@ def get_settings():
 
 @app.put("/api/settings")
 def update_settings(body: ModelSettings):
-    return settings.save_settings(body.model, body.api_key)
+    return settings.save_settings(**body.model_dump())
 
 
 @app.post("/api/settings/test")
 def test_model_settings(body: ModelSettings):
-    return settings.test_settings(body.model, body.api_key)
+    return settings.test_settings(**body.model_dump())
 
 
 @app.post("/api/retcons/preview")
@@ -126,7 +129,7 @@ def create_retcon(body: RetconRequest):
     if not engine_available():
         raise HTTPException(503, "Airflow is unavailable. Check its API server, scheduler, and RETCON DAG bundle, then try again.")
     if not settings.public_settings()["configured"]:
-        raise HTTPException(409, "Configure an OpenRouter model and API key in Settings first.")
+        raise HTTPException(409, "Configure a model in Settings first.")
     run = workflow.start_retcon(**body.model_dump())
     try:
         result = airflow.trigger(run["id"])
