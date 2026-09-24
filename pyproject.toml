@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airflow-retcon"
+version = "0.1.0"
+description = "An Airflow 3.3 writing workspace with checked, selective continuity repairs."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "apache-airflow>=3.3,<3.4",
+    "apache-airflow-providers-common-ai[openai]>=0.9,<0.10",
+    "apache-airflow-providers-standard>=1.18,<2",
+    "pydantic-ai-slim[openai]>=2.49,<3",
+    "openai>=3.19,<4",
+    "fastapi>=0.116,<1",
+    "httpx>=0.28,<1",
+    "pydantic>=2.12,<3",
+]
+
+[project.entry-points."airflow.plugins"]
+retcon = "retcon.plugin:RetconPlugin"
+
+[project.scripts]
+retcon = "retcon.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+retcon = ["web/*.html", "web/*.css", "web/*.js"]
+
+[dependency-groups]
+dev = ["build>=1,<2", "pytest>=8,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]

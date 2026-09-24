@@ -1,0 +1,19 @@
+.env
+.env.*
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.retcon/
+include/state/
+node_modules/
+playwright-report/
+test-results/
+logs/
+
+# Python distribution artifacts
+build/
+dist/
+*.egg-info/

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17252a">
+  <title>RETCON — Backfill for stories</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4L12 3Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v14c-4-1-6 0-9 2-3-2-5-3-9-2V4Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v5c0 5-8 10-8 10S4 16 4 11V6l8-3Z"/><path d="m8 11 3 3 5-5"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l5-1L20 8a2.8 2.8 0 0 0-4-4L5 15l-1 5Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 4v6h6M3.5 9a9 9 0 1 1 .5 8"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7m0-7L11 13M9 3H3v18h18v-6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v10m12-10c0 7-12 3-12 10"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="17" r="3"/></symbol>
+  </defs></svg>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="./" aria-label="RETCON home"><span class="brand-mark">r<span>↶</span></span><span>retcon<span class="brand-period">.</span></span></a>
+      <p class="brand-tagline">Backfill for stories.</p>
+      <div class="workspace-label"><span class="tiny-dot"></span> YOUR WRITING ROOM</div>
+      <div class="book-cover"><span class="cover-orbit"></span><span class="cover-star">✦</span><span class="cover-kicker">A RETCON MANUSCRIPT</span><h2 id="sidebar-title">Opening your<br>manuscript…</h2><span class="cover-line"></span><span class="cover-genre" id="sidebar-subtitle">A story in motion</span></div>
+      <div class="chapter-list-heading"><span>MANUSCRIPT</span><span id="chapter-count">—</span></div>
+      <nav id="chapter-nav" aria-label="Chapters"><div class="sidebar-loading">Loading chapters…</div></nav>
+      <div class="sidebar-bottom"><button class="sidebar-action" id="import-button"><svg><use href="#i-upload"/></svg>Bring your own draft<span>+</span></button><div class="sidebar-divider"></div><div class="sidebar-footer"><span class="footer-avatar">R</span><span>Author’s workspace<small>Your story. Your final say.</small></span></div></div>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb-title">Manuscript</strong></div><div class="topbar-actions"><span id="engine-badge" class="engine-badge" title="Connecting to the Airflow writing room."><span class="status-dot"></span>Airflow plugin</span><button class="icon-button settings-button" id="settings-button" title="AI settings" aria-label="AI settings"><svg><use href="#i-settings"/></svg><span>Settings</span></button><a class="icon-button" href="api/export" title="Export manuscript as Markdown" aria-label="Export manuscript as Markdown"><svg><use href="#i-download"/></svg></a><button class="icon-button" id="reset-button" title="Reset to the original demo" aria-label="Reset to the original demo"><svg><use href="#i-reset"/></svg></button></div></header>
+
+      <section class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> THE STORY IS YOURS TO CHANGE</div><h1>What if the past changed?</h1><p>Change one fact. See the ripple. Keep your story whole.</p></div><span class="manuscript-version" id="manuscript-version">MANUSCRIPT v—</span></section>
+
+      <div id="connection-error" class="connection-error" hidden></div>
+      <div id="setup-banner" class="setup-banner" hidden><span><strong>Connect your writing assistant</strong><small>Add an OpenRouter model and API key to start repairing your story.</small></span><button type="button" class="secondary-button" id="setup-button">Set up AI<svg><use href="#i-arrow"/></svg></button></div>
+
+      <section class="story-health" id="story-health" aria-label="Story health"><div><span class="health-symbol"><svg><use href="#i-shield"/></svg></span><span><strong>Your manuscript is loading</strong><small>Gathering chapters and story facts</small></span></div><div class="health-stats"><span><strong id="stat-chapters">—</strong> chapters</span><span><strong id="stat-words">—</strong> words</span><span class="health-fact-count"><strong id="stat-facts">—</strong> characters</span></div></section>
+
+      <div class="workspace-grid">
+        <section class="manuscript-panel" aria-label="Manuscript">
+          <div class="document-toolbar"><div class="view-tabs" role="tablist" aria-label="Story views"><button class="view-tab active" data-view="manuscript" role="tab" aria-selected="true"><svg><use href="#i-book"/></svg>Manuscript</button><button class="view-tab" data-view="continuity" role="tab" aria-selected="false"><svg><use href="#i-shield"/></svg>Continuity<span id="issue-count" class="tab-count" hidden></span></button><button class="view-tab" data-view="changes" role="tab" aria-selected="false"><svg><use href="#i-branch"/></svg>Changes<span id="patch-count" class="tab-count" hidden></span></button></div><button class="icon-button edit-button" id="edit-button" aria-label="Edit selected chapter" title="Edit selected chapter"><svg><use href="#i-edit"/></svg></button></div>
+          <div id="document-view" aria-live="polite"><div class="empty-state loading-state"><div class="loading-mark">r.</div><h2>Every story has a beginning.</h2><p>Opening your writing room…</p></div></div>
+          <div class="document-footer"><span><span class="status-dot"></span><span id="document-status">Connecting to your workspace</span></span><span id="document-position"></span></div>
+        </section>
+
+        <aside class="right-rail" aria-label="Story tools">
+          <section class="retcon-panel">
+            <div class="panel-title"><span class="feature-icon"><svg><use href="#i-spark"/></svg></span><div><h2>Rewrite the past</h2><p>Change a fact. Trace the consequences.</p></div><span class="beta-label">RETCON</span></div>
+            <form id="retcon-form">
+              <div class="field-row"><label>Who changes?<select id="character-input" name="character_id" required><option value="mara">Mara</option></select></label><label>Dies at the end of<select id="chapter-input" name="death_chapter" required><option value="2">Chapter 2</option></select></label></div>
+              <label class="instruction-label" for="instruction-input">Revision note<span>YOU SET THE DIRECTION</span></label>
+              <textarea id="instruction-input" name="instruction" rows="4" maxlength="2000" required>Mara betrays the crew and dies at the end of chapter 2.</textarea>
+              <p class="field-hint">This demo changes who is alive. Additional plot details stay as your editing notes. You approve every revision.</p>
+              <button class="primary-button" type="submit" id="preview-button"><svg><use href="#i-branch"/></svg><span>Inspect the ripple</span><svg class="button-arrow"><use href="#i-arrow"/></svg></button>
+              <div id="form-error" class="inline-error" role="alert" hidden></div>
+            </form>
+            <div id="impact-preview" hidden></div>
+          </section>
+
+          <section id="run-panel" class="run-panel" hidden></section>
+
+          <section class="bible-panel"><div class="rail-heading"><h2>The story bible</h2><span>CANON</span></div><p class="bible-description">The facts holding this world together.</p><div id="character-bible"><div class="skeleton-row"></div><div class="skeleton-row"></div></div><div class="bible-footnote"><svg><use href="#i-shield"/></svg>Continuity checks protect these facts.</div></section>
+
+          <div class="rail-note"><span>✳</span><p>Make the bold choice.<br>We’ll follow the consequences.</p></div>
+        </aside>
+      </div>
+      <footer class="page-footer"><span>RETCON <span class="footer-separator">/</span> A little revision. A different universe.</span><a id="airflow-link" href="#" target="_blank" rel="noreferrer" hidden>Open orchestration <svg><use href="#i-external"/></svg></a></footer>
+    </main>
+  </div>
+
+  <dialog id="draft-dialog"><form id="draft-form"><div class="dialog-heading"><div><div class="eyebrow" id="dialog-eyebrow">YOUR NEXT CHAPTER</div><h2 id="dialog-title">Bring your own draft</h2></div><button type="button" class="icon-button" id="dialog-close" aria-label="Close dialog"><svg><use href="#i-close"/></svg></button></div><p id="dialog-description">Paste a draft or upload a text file. Use chapter headings to separate your story.</p><label id="draft-title-label">Story title<input id="draft-title" required maxlength="200" placeholder="An untold story"></label><div id="upload-area"><label class="upload-control"><svg><use href="#i-upload"/></svg><span>Choose a .txt or .md file</span><input id="draft-file" type="file" accept=".txt,.md,text/plain,text/markdown"></label><span id="file-name"></span></div><label>Manuscript<textarea id="draft-text" rows="13" required placeholder="Chapter 1: The beginning&#10;&#10;It started with a choice…"></textarea></label><p class="field-hint" id="draft-hint">Import replaces this workspace’s manuscript. Export your current draft first if you’d like to keep it.</p><div id="draft-error" class="inline-error" role="alert" hidden></div><div class="dialog-actions"><button class="secondary-button" id="dialog-cancel" type="button">Cancel</button><button class="primary-button" type="submit" id="draft-save">Open in RETCON<svg><use href="#i-arrow"/></svg></button></div></form></dialog>
+  <dialog id="reset-dialog"><div class="dialog-heading"><div><div class="eyebrow">A FRESH START</div><h2>Reset the demo?</h2></div><button class="icon-button" id="reset-close" aria-label="Close reset dialog"><svg><use href="#i-close"/></svg></button></div><p>This restores the original five chapters and clears your revisions and retcon history. Export your manuscript first to keep a copy.</p><div class="dialog-actions"><button class="secondary-button" id="reset-cancel">Keep writing</button><button class="primary-button" id="reset-confirm">Reset demo<svg><use href="#i-reset"/></svg></button></div></dialog>
+  <dialog id="settings-dialog" aria-labelledby="settings-title"><form id="settings-form"><div class="dialog-heading"><div><div class="eyebrow">YOUR WRITING ASSISTANT</div><h2 id="settings-title">AI settings</h2></div><button type="button" class="icon-button" id="settings-close" aria-label="Close AI settings"><svg><use href="#i-close"/></svg></button></div><p id="settings-description">Choose the model that helps repair your story. You stay in control of every revision.</p><div class="settings-provider"><span class="settings-provider-mark"><svg><use href="#i-spark"/></svg></span><span><strong>OpenRouter</strong><small>One connection for your writing models</small></span><span id="settings-connection" class="settings-connection">Not connected</span></div><label for="settings-model">Model ID<input id="settings-model" name="model" required maxlength="200" placeholder="google/gemma-4-31b-it:free" autocomplete="off" spellcheck="false"></label><p class="field-hint">The demo uses <code>google/gemma-4-31b-it:free</code>. You can enter another OpenRouter model ID.</p><label for="settings-key">OpenRouter API key<input id="settings-key" name="api_key" type="password" autocomplete="new-password" placeholder="Paste your OpenRouter key" spellcheck="false" maxlength="512"></label><p class="field-hint" id="settings-key-hint">Your key is sent to this workspace’s server and stored in Airflow.</p><div class="settings-storage"><svg><use href="#i-shield"/></svg><p>Stored in Airflow Connection <code>retcon_openrouter</code>. Your key stays on the server and is never returned to this page.</p></div><div id="settings-lock" class="settings-notice" hidden></div><div id="settings-feedback" class="settings-feedback" role="status" aria-live="polite" hidden></div><div class="dialog-actions settings-actions"><button class="secondary-button" id="settings-test" type="button"><svg><use href="#i-check"/></svg>Test connection</button><button class="primary-button" id="settings-save" type="submit">Save settings<svg><use href="#i-arrow"/></svg></button></div><p class="settings-test-note">Testing sends a small request to your selected model through OpenRouter.</p></form></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
