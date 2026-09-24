@@ -1,0 +1,95 @@
+- main [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e12]:
+        - paragraph [ref=e13]:
+          - link [ref=e14] [cursor=pointer]:
+            - /url: https://huggingface.co/hexgrad/Kokoro-82M
+            - emphasis [ref=e15]:
+              - strong [ref=e16]: Kokoro
+            - strong [ref=e17]: is an open-weight TTS model with 82 million parameters.
+        - paragraph [ref=e18]: This demo only showcases English, but you can directly use the model to access other languages.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Input Text
+            - paragraph [ref=e27]: Up to ~500 characters per Generate, or 5000 characters per Stream
+            - textbox "Input Text Up to ~500 characters per Generate, or 5000 characters per Stream" [ref=e29]:
+              - /placeholder: ""
+          - generic [ref=e31]:
+            - generic [ref=e33]:
+              - generic [ref=e34]: Voice
+              - paragraph [ref=e37]: Quality and availability vary by language
+              - listbox "Voice" [ref=e41]: 🇺🇸 🚺 Heart ❤️
+            - generic [ref=e43]:
+              - generic [ref=e44]: Hardware
+              - paragraph [ref=e47]: GPU is usually faster, but has a usage quota
+              - listbox "Hardware" [ref=e51]: ZeroGPU 🚀
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: Speed
+              - generic [ref=e58]:
+                - spinbutton "number input for Speed" [ref=e59]: "1"
+                - button "Reset to default value" [ref=e60] [cursor=pointer]: ↺
+            - generic [ref=e61]:
+              - generic [ref=e62]: "0.5"
+              - slider "range slider for Speed" [ref=e63] [cursor=pointer]: "1"
+              - generic [ref=e64]: "2"
+          - button "🎲 Random Quote 💬" [ref=e65] [cursor=pointer]
+          - generic [ref=e66]:
+            - button "🥂 Gatsby 📕" [ref=e67] [cursor=pointer]
+            - button "💀 Frankenstein 📗" [ref=e68] [cursor=pointer]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [aria-hidden] [ref=e72]:
+              - button [ref=e73] [cursor=pointer]: Generate
+              - button [ref=e74] [cursor=pointer]: Stream
+            - tablist [ref=e75]:
+              - tab "Generate" [selected] [ref=e76] [cursor=pointer]
+              - tab "Stream" [ref=e77] [cursor=pointer]
+          - tabpanel [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]:
+                - generic: Output Audio
+                - generic "Empty value" [ref=e81]
+              - button "Generate" [ref=e87] [cursor=pointer]
+              - generic [ref=e88]:
+                - button "Output Tokens ▼" [ref=e89] [cursor=pointer]:
+                  - generic [ref=e90]: Output Tokens
+                  - generic [ref=e91]: ▼
+                - generic [ref=e93]:
+                  - generic [ref=e96]:
+                    - generic: Textbox
+                    - paragraph [ref=e99]: Tokens used to generate the audio, up to 510 context length.
+                    - textbox "Textbox Tokens used to generate the audio, up to 510 context length." [disabled] [ref=e101]:
+                      - /placeholder: ""
+                  - button "Tokenize" [ref=e102] [cursor=pointer]
+                  - generic [ref=e106]:
+                    - paragraph [ref=e107]:
+                      - text: 💡 Customize pronunciation with Markdown link syntax and /slashes/ like
+                      - code [ref=e108]: "[Kokoro](/kˈOkəɹO/)"
+                    - paragraph [ref=e109]:
+                      - text: 💬 To adjust intonation, try punctuation
+                      - code [ref=e110]: ;:,.!?—…"()“”
+                      - text: or stress
+                      - code [ref=e111]: ˈ
+                      - text: and
+                      - code [ref=e112]: ˌ
+                    - paragraph [ref=e113]:
+                      - text: ⬇️ Lower stress
+                      - code [ref=e114]: "[1 level](-1)"
+                      - text: or
+                      - code [ref=e115]: "[2 levels](-2)"
+                    - paragraph [ref=e116]:
+                      - text: ⬆️ Raise stress 1 level
+                      - code [ref=e117]: "[or](+2)"
+                      - text: 2 levels (only works on less stressed, usually short words)
+    - generic [ref=e118]:
+      - link [ref=e119] [cursor=pointer]:
+        - /url: https://gradio.app
+        - text: Built with Gradio
+        - img "logo" [ref=e120]
+      - generic [ref=e121]: ·
+      - button [ref=e122] [cursor=pointer]:
+        - text: Settings
+        - img "Settings" [ref=e123]

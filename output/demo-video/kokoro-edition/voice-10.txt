@@ -1,0 +1,1 @@
+The published result: three chapters checked, two paragraphs repaired, and three chapters untouched. The author can export the manuscript as Markdown, or keep writing the next chapter.

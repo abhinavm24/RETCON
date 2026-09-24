@@ -1,0 +1,79 @@
+{
+  "engine": "Kokoro-82M",
+  "voice": "af_heart",
+  "service": "https://huggingface.co/spaces/hexgrad/Kokoro-TTS",
+  "clips": [
+    {
+      "scene": 1,
+      "source_seconds": 8.1,
+      "tempo_factor": 1,
+      "final_seconds": 8.08
+    },
+    {
+      "scene": 2,
+      "source_seconds": 10.78,
+      "tempo_factor": 1.1846153846153846,
+      "final_seconds": 9.08
+    },
+    {
+      "scene": 3,
+      "source_seconds": 9.93,
+      "tempo_factor": 1,
+      "final_seconds": 9.9
+    },
+    {
+      "scene": 4,
+      "source_seconds": 11.78,
+      "tempo_factor": 1.0612612612612613,
+      "final_seconds": 11.08
+    },
+    {
+      "scene": 5,
+      "source_seconds": 11.38,
+      "tempo_factor": 1.0252252252252254,
+      "final_seconds": 11.07
+    },
+    {
+      "scene": 6,
+      "source_seconds": 13.4,
+      "tempo_factor": 1.0229007633587788,
+      "final_seconds": 13.08
+    },
+    {
+      "scene": 7,
+      "source_seconds": 13.08,
+      "tempo_factor": 1,
+      "final_seconds": 13.05
+    },
+    {
+      "scene": 8,
+      "source_seconds": 13.08,
+      "tempo_factor": 1.1783783783783783,
+      "final_seconds": 11.08
+    },
+    {
+      "scene": 9,
+      "source_seconds": 10.65,
+      "tempo_factor": 1,
+      "final_seconds": 10.63
+    },
+    {
+      "scene": 10,
+      "source_seconds": 10.35,
+      "tempo_factor": 1,
+      "final_seconds": 10.33
+    },
+    {
+      "scene": 11,
+      "source_seconds": 11.6,
+      "tempo_factor": 1.045045045045045,
+      "final_seconds": 11.08
+    },
+    {
+      "scene": 12,
+      "source_seconds": 10.35,
+      "tempo_factor": 1,
+      "final_seconds": 10.33
+    }
+  ]
+}

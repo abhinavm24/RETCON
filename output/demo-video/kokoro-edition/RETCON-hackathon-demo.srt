@@ -1,0 +1,143 @@
+1
+00:00:00,500 --> 00:00:03,193
+Mara dies at the end of chapter two. So why is
+
+2
+00:00:03,193 --> 00:00:05,887
+she still speaking in chapter three? One change can break everything
+
+3
+00:00:05,887 --> 00:00:08,580
+that follows.
+
+4
+00:00:10,500 --> 00:00:13,527
+Every data engineer knows backfill. Novelists call it retcon. Meet RETCON:
+
+5
+00:00:13,527 --> 00:00:16,553
+an Apache Airflow plugin that helps writers follow the consequences of
+
+6
+00:00:16,553 --> 00:00:19,580
+a change.
+
+7
+00:00:20,500 --> 00:00:23,800
+Here is The Aster Protocol, a five chapter mystery. The revision
+
+8
+00:00:23,800 --> 00:00:27,100
+is simple: Mara dies at the end of chapter two. The
+
+9
+00:00:27,100 --> 00:00:30,400
+writer sets the direction.
+
+10
+00:00:32,500 --> 00:00:36,193
+Three later chapters depend on Mara. But dependency is not the
+
+11
+00:00:36,193 --> 00:00:39,887
+same as contradiction. Chapters three and four contain broken dialogue. Chapter
+
+12
+00:00:39,887 --> 00:00:43,580
+five only remembers her.
+
+13
+00:00:44,500 --> 00:00:48,190
+RETCON quotes the offending paragraphs. A dead character is still speaking.
+
+14
+00:00:48,190 --> 00:00:51,880
+These are deterministic continuity failures, so we know exactly which paragraphs
+
+15
+00:00:51,880 --> 00:00:55,570
+need attention.
+
+16
+00:00:56,500 --> 00:01:00,860
+An asset event starts the cascade. Airflow checks dependent chapters, maps
+
+17
+00:01:00,860 --> 00:01:05,220
+repairs across the failing paragraphs, and handles retries. This is the
+
+18
+00:01:05,220 --> 00:01:09,580
+actual run, paused at its human approval task.
+
+19
+00:01:10,500 --> 00:01:14,850
+The model proposes focused repairs. In chapter four, Ivo takes over
+
+20
+00:01:14,850 --> 00:01:19,200
+one line of dialogue. The rest of that paragraph stays intact.
+
+21
+00:01:19,200 --> 00:01:23,550
+The writer can compare the original and the proposed text.
+
+22
+00:01:24,500 --> 00:01:28,193
+The replacements pass the implemented continuity checks before review. Invalid or
+
+23
+00:01:28,193 --> 00:01:31,887
+incomplete repairs cannot publish. Until the author approves, the published manuscript
+
+24
+00:01:31,887 --> 00:01:35,580
+and its canon remain intact.
+
+25
+00:01:36,500 --> 00:01:40,043
+Now the writer approves the revision. That decision resumes the native
+
+26
+00:01:40,043 --> 00:01:43,587
+Airflow human in the loop task. The reviewed paragraphs and the
+
+27
+00:01:43,587 --> 00:01:47,130
+new canon are published together.
+
+28
+00:01:48,500 --> 00:01:51,943
+Chapter five still remembers Mara. That is valid after her death,
+
+29
+00:01:51,943 --> 00:01:55,387
+so it stays exactly as written. A story can preserve someone
+
+30
+00:01:55,387 --> 00:01:58,830
+without bringing them back to life.
+
+31
+00:02:00,500 --> 00:02:04,193
+The published result: three chapters checked, two paragraphs repaired, and three
+
+32
+00:02:04,193 --> 00:02:07,887
+chapters untouched. The author can export the manuscript as Markdown, or
+
+33
+00:02:07,887 --> 00:02:11,580
+keep writing the next chapter.
+
+34
+00:02:12,500 --> 00:02:15,943
+One plugin. A real Airflow workflow. AI for focused repairs, and
+
+35
+00:02:15,943 --> 00:02:19,387
+a human for the final decision. RETCON. Change the past. Keep
+
+36
+00:02:19,387 --> 00:02:22,830
+your story whole.

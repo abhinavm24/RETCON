@@ -1,0 +1,35 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - heading "Spaces Hugging Face's logo hexgrad / Kokoro-TTS Like 3.48k Agents Running on Zero Get PRO" [level=1] [ref=e7]:
+        - generic [ref=e8]:
+          - link "Spaces" [ref=e9] [cursor=pointer]:
+            - /url: /spaces
+          - link [ref=e10] [cursor=pointer]:
+            - /url: /
+            - img "Hugging Face's logo" [ref=e11]
+        - separator [ref=e12]
+        - generic [ref=e13]:
+          - link [ref=e17] [cursor=pointer]:
+            - /url: /hexgrad
+          - link "hexgrad" [ref=e21] [cursor=pointer]:
+            - /url: /hexgrad
+          - generic [ref=e22]: /
+        - generic [ref=e23]:
+          - link "Kokoro-TTS" [ref=e24] [cursor=pointer]:
+            - /url: /spaces/hexgrad/Kokoro-TTS
+          - button "Copy space name to clipboard" [ref=e25] [cursor=pointer]
+        - generic [ref=e30]:
+          - button "Like" [ref=e33] [cursor=pointer]
+          - button "3.48k" [ref=e37] [cursor=pointer]
+        - generic [ref=e38]: Agents
+        - generic [ref=e49] [cursor=pointer]:
+          - text: Running
+          - generic [ref=e50]: "on"
+          - generic [ref=e51]: Zero
+        - link "Get PRO" [ref=e52] [cursor=pointer]:
+          - /url: /pro
+        - button [ref=e57] [cursor=pointer]
+      - button [ref=e65] [cursor=pointer]
+  - main [ref=e68]:
+    - iframe [ref=e70]

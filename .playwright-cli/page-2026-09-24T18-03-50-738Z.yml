@@ -1,0 +1,236 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Home" [ref=e18] [cursor=pointer]:
+          - /url: /
+        - link "Dags" [ref=e23] [cursor=pointer]:
+          - /url: /dags
+        - link "Assets" [ref=e29] [cursor=pointer]:
+          - /url: /assets
+        - button "Browse" [ref=e35] [cursor=pointer]
+        - button "Admin" [ref=e40] [cursor=pointer]
+      - generic [ref=e45]:
+        - button "Docs" [ref=e46] [cursor=pointer]
+        - button "+05:30" [ref=e51] [cursor=pointer]
+        - button "User" [ref=e56] [cursor=pointer]
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - navigation "breadcrumb" [ref=e65]:
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - generic [ref=e68]:
+                - term [ref=e69]: Dag
+                - definition [ref=e70]:
+                  - generic [ref=e71]:
+                    - generic [ref=e72]:
+                      - checkbox [checked] [ref=e73]
+                      - generic [aria-hidden] [ref=e74] [cursor=pointer]
+                    - link "retcon_cascade" [ref=e76] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade
+            - listitem [aria-hidden] [ref=e77]
+            - listitem [ref=e80]:
+              - generic [ref=e81]:
+                - term [ref=e82]: Dag Run
+                - definition [ref=e83]:
+                  - link "asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C" [ref=e84]
+        - button "Search Dags ⌘+K" [ref=e88] [cursor=pointer]:
+          - text: Search Dags
+          - generic [ref=e92]: ⌘+K
+      - generic [ref=e94]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - button "Show Grid (Press g)" [ref=e100] [cursor=pointer]
+              - button "Show Gantt" [ref=e106] [cursor=pointer]
+              - button "Show Graph (Press g)" [ref=e109] [cursor=pointer]
+            - generic [ref=e113]:
+              - button [ref=e114] [cursor=pointer]
+              - button "Options" [ref=e117] [cursor=pointer]
+          - generic [ref=e121]:
+            - button "Filter" [ref=e123] [cursor=pointer]
+            - generic [ref=e128] [cursor=pointer]
+        - separator [ref=e145]:
+          - button "Collapse Details Panel" [ref=e147] [cursor=pointer]
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - generic [ref=e156]:
+                  - heading [level=2] [ref=e157]
+                  - heading "asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C" [level=2] [ref=e159]
+                  - heading [level=2]
+                  - generic [ref=e160]: Running
+                - generic [ref=e163]:
+                  - button "Press shift+c to clear" [ref=e164] [cursor=pointer]
+                  - button "Mark Dag Run as..." [ref=e168] [cursor=pointer]:
+                    - generic [ref=e169]: /
+                  - button "Delete Dag Run" [ref=e176] [cursor=pointer]
+              - generic [ref=e179]:
+                - generic [ref=e181]:
+                  - heading "Run Type" [level=2] [ref=e182]
+                  - paragraph [ref=e189]: Asset Triggered
+                - generic [ref=e191]:
+                  - heading "Start Date" [level=2] [ref=e192]
+                  - time [ref=e195]: 2026-09-24 23:30:58
+                - heading "End Date" [level=2] [ref=e198]
+                - generic [ref=e200]:
+                  - heading "Duration" [level=2] [ref=e201]
+                  - generic [ref=e202]: 00:02:52
+                - generic [ref=e204]:
+                  - heading "Dag Version(s)" [level=2] [ref=e205]
+                  - generic [ref=e206]: v3
+            - generic [ref=e210]:
+              - paragraph [ref=e215]: Add a note...
+              - button "Edit note" [ref=e216] [cursor=pointer]
+          - generic [ref=e220]:
+            - link "Task Instances" [ref=e221] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C
+            - link "Asset Events" [ref=e226] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/asset_events
+            - link "Audit Log" [ref=e232] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/events
+            - link "Code" [ref=e237] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/code
+            - link "Details" [ref=e242] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/details
+          - generic [ref=e247]:
+            - button "Filter" [ref=e250] [cursor=pointer]
+            - generic [ref=e254]:
+              - table [ref=e256]:
+                - rowgroup [ref=e257]:
+                  - row [ref=e258]:
+                    - columnheader [ref=e259]:
+                      - generic [ref=e260]:
+                        - checkbox [ref=e261]
+                        - generic [aria-hidden] [ref=e262] [cursor=pointer]
+                    - columnheader "Task ID" [ref=e264]
+                    - columnheader [ref=e265]:
+                      - button "sort" [ref=e266] [cursor=pointer]:
+                        - text: Map Index
+                        - img "unsorted" [ref=e267]
+                    - columnheader [ref=e269]:
+                      - button "sort" [ref=e270] [cursor=pointer]:
+                        - text: State
+                        - img "unsorted" [ref=e271]
+                    - columnheader [ref=e273]:
+                      - button "sort" [ref=e274] [cursor=pointer]:
+                        - text: Start Date
+                        - img "unsorted" [ref=e275]
+                    - columnheader "Try Number" [ref=e277]
+                    - columnheader "Operator" [ref=e278]
+                    - columnheader [ref=e279]:
+                      - button "sort" [ref=e280] [cursor=pointer]:
+                        - text: Duration
+                        - img "unsorted" [ref=e281]
+                    - columnheader [ref=e283]:
+                      - button "Filter table columns" [ref=e284] [cursor=pointer]
+                - rowgroup [ref=e287]:
+                  - row [ref=e288]:
+                    - cell [ref=e289]
+                    - cell [ref=e290]
+                    - cell [ref=e291]
+                    - cell [ref=e292]
+                    - cell [ref=e293]
+                    - cell [ref=e294]
+                    - cell [ref=e295]
+                    - cell [ref=e296]
+                    - cell [ref=e297]
+                  - row [ref=e298]:
+                    - cell [ref=e299]
+                    - cell [ref=e300]
+                    - cell [ref=e301]
+                    - cell [ref=e302]
+                    - cell [ref=e303]
+                    - cell [ref=e304]
+                    - cell [ref=e305]
+                    - cell [ref=e306]
+                    - cell [ref=e307]
+                  - row [ref=e308]:
+                    - cell [ref=e309]
+                    - cell [ref=e310]
+                    - cell [ref=e311]
+                    - cell [ref=e312]
+                    - cell [ref=e313]
+                    - cell [ref=e314]
+                    - cell [ref=e315]
+                    - cell [ref=e316]
+                    - cell [ref=e317]
+                  - row [ref=e318]:
+                    - cell [ref=e319]
+                    - cell [ref=e320]
+                    - cell [ref=e321]
+                    - cell [ref=e322]
+                    - cell [ref=e323]
+                    - cell [ref=e324]
+                    - cell [ref=e325]
+                    - cell [ref=e326]
+                    - cell [ref=e327]
+                  - row [ref=e328]:
+                    - cell [ref=e329]
+                    - cell [ref=e330]
+                    - cell [ref=e331]
+                    - cell [ref=e332]
+                    - cell [ref=e333]
+                    - cell [ref=e334]
+                    - cell [ref=e335]
+                    - cell [ref=e336]
+                    - cell [ref=e337]
+                  - row [ref=e338]:
+                    - cell [ref=e339]
+                    - cell [ref=e340]
+                    - cell [ref=e341]
+                    - cell [ref=e342]
+                    - cell [ref=e343]
+                    - cell [ref=e344]
+                    - cell [ref=e345]
+                    - cell [ref=e346]
+                    - cell [ref=e347]
+                  - row [ref=e348]:
+                    - cell [ref=e349]
+                    - cell [ref=e350]
+                    - cell [ref=e351]
+                    - cell [ref=e352]
+                    - cell [ref=e353]
+                    - cell [ref=e354]
+                    - cell [ref=e355]
+                    - cell [ref=e356]
+                    - cell [ref=e357]
+                  - row [ref=e358]:
+                    - cell [ref=e359]
+                    - cell [ref=e360]
+                    - cell [ref=e361]
+                    - cell [ref=e362]
+                    - cell [ref=e363]
+                    - cell [ref=e364]
+                    - cell [ref=e365]
+                    - cell [ref=e366]
+                    - cell [ref=e367]
+                  - row [ref=e368]:
+                    - cell [ref=e369]
+                    - cell [ref=e370]
+                    - cell [ref=e371]
+                    - cell [ref=e372]
+                    - cell [ref=e373]
+                    - cell [ref=e374]
+                    - cell [ref=e375]
+                    - cell [ref=e376]
+                    - cell [ref=e377]
+                  - row [ref=e378]:
+                    - cell [ref=e379]
+                    - cell [ref=e380]
+                    - cell [ref=e381]
+                    - cell [ref=e382]
+                    - cell [ref=e383]
+                    - cell [ref=e384]
+                    - cell [ref=e385]
+                    - cell [ref=e386]
+                    - cell [ref=e387]
+              - navigation "pagination" [ref=e388]:
+                - generic [ref=e389]:
+                  - button "previous page" [disabled] [ref=e390]
+                  - button "next page" [disabled] [ref=e393]
+  - region "Notifications, bottom-end (alt+T)"
+  - region "Notifications, bottom-end (alt+T)"

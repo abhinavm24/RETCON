@@ -1,0 +1,108 @@
+- generic [ref=f2e2]:
+  - complementary [ref=f2e3]:
+    - link "RETCON home" [ref=f2e4] [cursor=pointer]:
+      - /url: ./
+      - generic [ref=f2e5]:
+        - text: r
+        - generic [ref=f2e6]: ↶
+      - generic [ref=f2e7]: retcon.
+    - paragraph [ref=f2e8]: Backfill for stories.
+    - generic [ref=f2e9]: YOUR WRITING ROOM
+    - generic [ref=f2e11]:
+      - generic [ref=f2e13]: ✦
+      - text: A RETCON MANUSCRIPT
+      - heading "Opening your manuscript…" [level=2] [ref=f2e14]: Opening yourmanuscript…
+      - generic [ref=f2e16]: A story in motion
+    - generic [ref=f2e17]:
+      - generic [ref=f2e18]: MANUSCRIPT
+      - generic [ref=f2e19]: —
+    - navigation "Chapters" [ref=f2e20]:
+      - generic [ref=f2e21]: Loading chapters…
+    - generic [ref=f2e22]:
+      - button "Bring your own draft +" [ref=f2e23] [cursor=pointer]:
+        - text: Bring your own draft
+        - generic [ref=f2e26]: +
+      - generic [ref=f2e28]:
+        - generic [ref=f2e29]: R
+        - generic [ref=f2e30]:
+          - text: Author’s workspace
+          - generic [ref=f2e31]: Your story. Your final say.
+  - main [ref=f2e32]:
+    - generic [ref=f2e33]:
+      - generic [ref=f2e34]:
+        - text: Workspace
+        - generic [ref=f2e35]: /
+        - strong [ref=f2e36]: Manuscript
+      - generic [ref=f2e37]:
+        - generic "Connecting to the Airflow writing room." [ref=f2e38]: Airflow plugin
+        - button "AI settings" [ref=f2e40] [cursor=pointer]:
+          - generic [ref=f2e43]: Settings
+        - link "Export manuscript as Markdown" [ref=f2e44] [cursor=pointer]:
+          - /url: api/export
+        - button "Reset to the original demo" [ref=f2e47] [cursor=pointer]
+    - generic [ref=f2e50]:
+      - generic [ref=f2e51]:
+        - generic [ref=f2e52]: THE STORY IS YOURS TO CHANGE
+        - heading "What if the past changed?" [level=1] [ref=f2e54]
+        - paragraph [ref=f2e55]: Change one fact. See the ripple. Keep your story whole.
+      - generic [ref=f2e56]: MANUSCRIPT v—
+    - region "Story health" [ref=f2e57]:
+      - generic [ref=f2e62]:
+        - strong [ref=f2e63]: Your manuscript is loading
+        - generic [ref=f2e64]: Gathering chapters and story facts
+      - generic [ref=f2e65]:
+        - generic [ref=f2e66]:
+          - strong [ref=f2e67]: —
+          - text: chapters
+        - generic [ref=f2e68]:
+          - strong [ref=f2e69]: —
+          - text: words
+        - generic [ref=f2e70]:
+          - strong [ref=f2e71]: —
+          - text: characters
+    - generic [ref=f2e72]:
+      - region "Manuscript" [ref=f2e73]:
+        - generic [ref=f2e74]:
+          - tablist "Story views" [ref=f2e75]:
+            - tab "Manuscript" [selected] [ref=f2e76] [cursor=pointer]
+            - tab "Continuity" [ref=f2e79] [cursor=pointer]
+            - tab "Changes" [ref=f2e82] [cursor=pointer]
+          - button "Edit selected chapter" [ref=f2e85] [cursor=pointer]
+        - generic [ref=f2e89]:
+          - generic [ref=f2e90]: r.
+          - heading "Every story has a beginning." [level=2] [ref=f2e91]
+          - paragraph [ref=f2e92]: Opening your writing room…
+        - generic [ref=f2e93]: Connecting to your workspace
+      - complementary "Story tools" [ref=f2e97]:
+        - generic [ref=f2e98]:
+          - generic [ref=f2e99]:
+            - generic [ref=f2e103]:
+              - heading "Rewrite the past" [level=2] [ref=f2e104]
+              - paragraph [ref=f2e105]: Change a fact. Trace the consequences.
+            - generic [ref=f2e106]: RETCON
+          - generic [ref=f2e107]:
+            - generic [ref=f2e108]:
+              - generic [ref=f2e109]:
+                - text: Who changes?
+                - combobox "Who changes?" [ref=f2e110] [cursor=pointer]:
+                  - option "Mara" [selected]
+              - generic [ref=f2e111]:
+                - text: Dies at the end of
+                - combobox "Dies at the end of" [ref=f2e112] [cursor=pointer]:
+                  - option "Chapter 2" [selected]
+            - generic [ref=f2e113]:
+              - text: Revision note
+              - generic [ref=f2e114]: YOU SET THE DIRECTION
+            - textbox "Revision note YOU SET THE DIRECTION" [ref=f2e115]: Mara betrays the crew and dies at the end of chapter 2.
+            - paragraph [ref=f2e116]: This demo changes who is alive. Additional plot details stay as your editing notes. You approve every revision.
+            - button "Inspect the ripple" [ref=f2e117] [cursor=pointer]
+        - generic [ref=f2e123]:
+          - generic [ref=f2e124]:
+            - heading "The story bible" [level=2] [ref=f2e125]
+            - generic [ref=f2e126]: CANON
+          - paragraph [ref=f2e127]: The facts holding this world together.
+          - generic [ref=f2e131]: Continuity checks protect these facts.
+        - generic [ref=f2e134]:
+          - generic [ref=f2e135]: ✳
+          - paragraph [ref=f2e136]: Make the bold choice.We’ll follow the consequences.
+    - generic [ref=f2e137]: RETCON / A little revision. A different universe.
