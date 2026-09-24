@@ -4,7 +4,49 @@
 
 RETCON is an Airflow 3.3 plugin that checks how a story change affects later chapters, repairs contradictory paragraphs with AI, and lets the writer approve the result.
 
-## Install
+## Quick start
+
+Choose Docker or a Python virtual environment. Both start a local Airflow 3.3.2 demo, register RETCON's DAGs, and open without a login form. No environment file or manual Airflow setup is needed.
+
+### Docker
+
+Requires Docker with Compose.
+
+```sh
+docker compose up --build
+```
+
+Open **http://localhost:8080/plugin/retcon-writer**. Stop with `Ctrl+C` or `docker compose down`. Stories, settings, and the Airflow database stay in the Docker volume.
+
+For another port:
+
+```sh
+RETCON_PORT=8082 docker compose up --build
+```
+
+### Project virtual environment
+
+On macOS or Linux, install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
+
+```sh
+./scripts/local-demo
+```
+
+The launcher creates `.venv`, installs the locked dependencies and RETCON, and runs Airflow directly from that environment. Open **http://127.0.0.1:8080/plugin/retcon-writer**. Stop with `Ctrl+C`; data is kept in `.retcon/local`.
+
+For another port:
+
+```sh
+./scripts/local-demo --port 8082
+```
+
+The two options keep separate data. The first installation downloads Airflow and its dependencies, so it can take a few minutes.
+
+### Connect the model
+
+In **Settings**, select `google/gemma-4-31b-it:free`, enter your OpenRouter key, test, and save. The key is encrypted in Airflow Connection `retcon_openrouter`; the model is stored in `extra.model`. Settings changes need no restart.
+
+## Install in an existing Airflow environment
 
 Requires Airflow **3.3.x** and Python **3.11–3.13**.
 
@@ -14,17 +56,7 @@ pip install dist/airflow_retcon-0.1.0-py3-none-any.whl
 retcon configure
 ```
 
-The wheel includes the writer UI, API, and both DAGs. Airflow loads the plugin through its package entry point; `retcon configure` registers the packaged DAG bundle while preserving existing bundles. Restart your Airflow components after installation.
-
-## Run the local demo
-
-```sh
-AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True AIRFLOW__API__HOST=127.0.0.1 airflow standalone
-```
-
-Open `/plugin/retcon-writer` at your Airflow URL, or choose **Browse → RETCON writer**. This local demo opens without a login form.
-
-In **Settings**, select `google/gemma-4-31b-it:free`, enter your OpenRouter key, test, and save. The key is encrypted in Airflow Connection `retcon_openrouter`; the model is stored in `extra.model`. Settings changes need no restart.
+Restart your Airflow components. The wheel includes the writer UI, API, and both DAGs; bundle registration preserves your existing DAG bundles.
 
 ## Try it
 

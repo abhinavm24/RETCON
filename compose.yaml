@@ -1,0 +1,31 @@
+services:
+  airflow:
+    build: .
+    ports:
+      - "127.0.0.1:${RETCON_PORT:-8080}:8080"
+    environment:
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__API__HOST: "0.0.0.0"
+      AIRFLOW__API__PORT: "8080"
+    volumes:
+      - airflow-home:/opt/airflow
+    command: ["bash", "-ec", "retcon configure && exec airflow standalone"]
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          import json, urllib.request;
+          status = json.load(urllib.request.urlopen('http://127.0.0.1:8080/api/v2/monitor/health'));
+          assert all(status[component]['status'] == 'healthy'
+          for component in ('metadatabase', 'scheduler', 'dag_processor', 'triggerer'))
+      interval: 15s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+    stop_grace_period: 30s
+
+volumes:
+  airflow-home:

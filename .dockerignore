@@ -1,0 +1,12 @@
+# Send only package build inputs. Local environments, state, and credentials
+# never enter the Docker build context.
+*
+!Dockerfile
+!pyproject.toml
+!README.md
+!LICENSE
+!src/
+!src/retcon/
+!src/retcon/**
+**/__pycache__/
+**/*.pyc

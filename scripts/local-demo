@@ -1,0 +1,68 @@
+#!/bin/sh
+# Run the installed plugin in this project's Python virtual environment.
+set -eu
+
+usage() {
+    printf '%s\n' 'Usage: ./scripts/local-demo [--port PORT]' 'Default URL: http://127.0.0.1:8080/plugin/retcon-writer'
+}
+
+port=8080
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        --port)
+            [ "$#" -ge 2 ] || { usage >&2; exit 2; }
+            port=$2
+            shift 2
+            ;;
+        -h|--help) usage; exit 0 ;;
+        *) usage >&2; exit 2 ;;
+    esac
+done
+case "$port" in
+    ''|*[!0-9]*) printf '%s\n' 'Port must be a number between 1024 and 65535.' >&2; exit 2 ;;
+esac
+[ "${#port}" -le 5 ] && [ "$port" -ge 1024 ] && [ "$port" -le 65535 ] || {
+    printf '%s\n' 'Port must be a number between 1024 and 65535.' >&2
+    exit 2
+}
+command -v uv >/dev/null 2>&1 || {
+    printf '%s\n' 'Install uv first: https://docs.astral.sh/uv/getting-started/installation/' >&2
+    exit 1
+}
+
+project_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$project_dir"
+UV_PROJECT_ENVIRONMENT="$project_dir/.venv" uv sync --locked --python 3.12 --no-dev
+
+# Isolate the demo from another Airflow installation in the user's shell.
+export AIRFLOW_HOME="$project_dir/.retcon/local"
+export AIRFLOW_CONFIG="$AIRFLOW_HOME/airflow.cfg"
+export AIRFLOW__DATABASE__SQL_ALCHEMY_CONN="sqlite:///$AIRFLOW_HOME/airflow.db"
+export AIRFLOW__CORE__AUTH_MANAGER=airflow.api_fastapi.auth.managers.simple.simple_auth_manager.SimpleAuthManager
+export AIRFLOW__CORE__EXECUTOR=LocalExecutor
+export AIRFLOW__CORE__LOAD_EXAMPLES=False
+export AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True
+export AIRFLOW__API__HOST=127.0.0.1
+export AIRFLOW__API__PORT="$port"
+export AIRFLOW__API__BASE_URL="http://127.0.0.1:$port"
+export AIRFLOW__CORE__EXECUTION_API_SERVER_URL="$AIRFLOW__API__BASE_URL/execution/"
+export PATH="$project_dir/.venv/bin:$PATH"
+unset AIRFLOW__DAG_PROCESSOR__DAG_BUNDLE_CONFIG_LIST AIRFLOW__DAG_PROCESSOR__DAG_BUNDLE_CONFIG_LIST_CMD AIRFLOW__DAG_PROCESSOR__DAG_BUNDLE_CONFIG_LIST_SECRET
+unset AIRFLOW_CONN_RETCON_OPENROUTER RETCON_STATE_DIR
+unset AIRFLOW__CORE__FERNET_KEY AIRFLOW__CORE__FERNET_KEY_CMD AIRFLOW__CORE__FERNET_KEY_SECRET
+unset AIRFLOW__API_AUTH__JWT_SECRET AIRFLOW__API_AUTH__JWT_SECRET_CMD AIRFLOW__API_AUTH__JWT_SECRET_SECRET
+
+.venv/bin/python - "$port" <<'PY'
+import socket
+import sys
+
+with socket.socket() as probe:
+    try:
+        probe.bind(("127.0.0.1", int(sys.argv[1])))
+    except OSError:
+        raise SystemExit(f"Port {sys.argv[1]} is busy. Try ./scripts/local-demo --port 8082")
+PY
+
+.venv/bin/retcon configure
+printf '\n%s\n' "RETCON: $AIRFLOW__API__BASE_URL/plugin/retcon-writer" "Data: $AIRFLOW_HOME" 'Press Ctrl+C to stop. Your stories and settings will be kept.'
+exec .venv/bin/airflow standalone
