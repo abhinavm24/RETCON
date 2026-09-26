@@ -1,0 +1,231 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - link "RETCON home" [ref=e4] [cursor=pointer]:
+      - /url: ./
+      - generic [ref=e5]:
+        - text: r
+        - generic [ref=e6]: ↶
+      - generic [ref=e7]: retcon.
+    - paragraph [ref=e8]: Backfill for stories.
+    - generic [ref=e9]: YOUR WRITING ROOM
+    - generic [ref=e11]:
+      - generic [ref=e13]: ✦
+      - text: A RETCON MANUSCRIPT
+      - heading "The Aster Protocol" [level=2] [ref=e14]
+      - generic [ref=e16]: A locked-room mystery at the edge of the world
+    - generic [ref=e17]:
+      - generic [ref=e18]: MANUSCRIPT
+      - generic [ref=e19]: "05"
+    - navigation "Chapters" [ref=e20]:
+      - button "01 A room without a door Saved chapter" [ref=e405] [cursor=pointer]:
+        - generic [ref=e406]: "01"
+        - generic [ref=e407]: A room without a door
+        - generic "Saved chapter" [ref=e408]
+      - button "02 The airlock Saved chapter" [ref=e409] [cursor=pointer]:
+        - generic [ref=e410]: "02"
+        - generic [ref=e411]: The airlock
+        - generic "Saved chapter" [ref=e412]
+      - button "03 The wrong voice Continuity issue found" [ref=e413] [cursor=pointer]:
+        - generic [ref=e414]: "03"
+        - generic [ref=e415]: The wrong voice
+        - generic "Continuity issue found" [ref=e416]
+      - button "04 What the archive kept Continuity issue found" [ref=e417] [cursor=pointer]:
+        - generic [ref=e418]: "04"
+        - generic [ref=e419]: What the archive kept
+        - generic "Continuity issue found" [ref=e420]
+      - button "05 The things that remain Saved chapter" [ref=e421] [cursor=pointer]:
+        - generic [ref=e422]: "05"
+        - generic [ref=e423]: The things that remain
+        - generic "Saved chapter" [ref=e424]
+    - generic [ref=e41]:
+      - button "Bring your own draft +" [disabled] [ref=e42]:
+        - text: Bring your own draft
+        - generic [ref=e45]: +
+      - generic [ref=e47]:
+        - generic [ref=e48]: R
+        - generic [ref=e49]:
+          - text: Author’s workspace
+          - generic [ref=e50]: Your story. Your final say.
+  - main [ref=e51]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - text: Workspace
+        - generic [ref=e54]: /
+        - strong [ref=e55]: The Aster Protocol
+      - generic [ref=e56]:
+        - 'generic "This writing room runs inside Apache Airflow. Model: google/gemma-4-31b-it:free." [ref=e57]': Airflow plugin
+        - button "AI settings" [ref=e59] [cursor=pointer]:
+          - generic [ref=e62]: Settings
+        - link "Export manuscript as Markdown" [ref=e63] [cursor=pointer]:
+          - /url: api/export
+        - button "Reset to the original demo" [disabled] [ref=e66]
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]: THE STORY IS YOURS TO CHANGE
+        - heading "What if the past changed?" [level=1] [ref=e73]
+        - paragraph [ref=e74]: Change one fact. See the ripple. Keep your story whole.
+      - generic [ref=e75]: MANUSCRIPT v1
+    - region "Story health" [ref=e76]:
+      - generic [ref=e430]:
+        - strong [ref=e431]: The next version is ready for your review
+        - generic [ref=e432]: Compare the changes, then decide what becomes canon
+      - generic [ref=e433]:
+        - generic [ref=e434]:
+          - strong [ref=e435]: "5"
+          - text: chapters
+        - generic [ref=e436]:
+          - strong [ref=e437]: "458"
+          - text: words
+        - generic [ref=e438]:
+          - strong [ref=e439]: "3"
+          - text: characters
+    - generic [ref=e91]:
+      - region "Manuscript" [ref=e92]:
+        - tablist "Story views" [ref=e94]:
+          - tab "Manuscript" [ref=e95] [cursor=pointer]
+          - tab "Continuity 2" [active] [selected] [ref=e98] [cursor=pointer]:
+            - text: Continuity
+            - generic [ref=e101]: "2"
+          - tab "Changes 2" [ref=e277] [cursor=pointer]:
+            - text: Changes
+            - generic [ref=e105]: "2"
+        - generic [ref=e440]:
+          - generic [ref=e441]:
+            - generic [ref=e442]: FOLLOW THE CONSEQUENCES
+            - heading "Where the story changes." [level=2] [ref=e443]
+            - paragraph [ref=e444]: 3 chapters in the affected path. We only rewrite paragraphs that need repair.
+          - generic [ref=e445]:
+            - button "Ch. 1" [ref=e446] [cursor=pointer]
+            - button "Ch. 2" [ref=e449] [cursor=pointer]
+            - button "Ch. 3" [ref=e452] [cursor=pointer]
+            - button "Ch. 4" [ref=e455] [cursor=pointer]
+            - button "Ch. 5" [ref=e458] [cursor=pointer]
+          - generic [ref=e461]:
+            - generic [ref=e462]:
+              - generic [ref=e463]: dead character speaks
+              - generic [ref=e464]: CHAPTER 3
+            - generic [ref=e465]:
+              - heading "Mara speaks after dying at the end of chapter 2." [level=3] [ref=e466]
+              - blockquote [ref=e467]: Mara leaned over the console. “The key opens the lower archive,” Mara said. “I hid the original logs there.” Ivo looked from her to the brass key on the desk.
+              - button "Read in context" [ref=e468] [cursor=pointer]
+          - generic [ref=e471]:
+            - generic [ref=e472]:
+              - generic [ref=e473]: dead character speaks
+              - generic [ref=e474]: CHAPTER 4
+            - generic [ref=e475]:
+              - heading "Mara speaks after dying at the end of chapter 2." [level=3] [ref=e476]
+              - blockquote [ref=e477]: “Look at the date,” Mara whispered, holding the notebook open. Sera saw tomorrow written at the top of the page. Beneath it was an exact account of the airlock alarm.
+              - button "Read in context" [ref=e478] [cursor=pointer]
+        - generic [ref=e130]: Continuity audit
+      - complementary "Story tools" [ref=e135]:
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e141]:
+              - heading "Rewrite the past" [level=2] [ref=e142]
+              - paragraph [ref=e143]: Change a fact. Trace the consequences.
+            - generic [ref=e144]: RETCON
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - text: Who changes?
+                - combobox "Who changes?" [disabled] [ref=e148] [cursor=pointer]:
+                  - option "Mara" [selected]
+                  - option "Sera"
+                  - option "Ivo"
+              - generic [ref=e149]:
+                - text: Dies at the end of
+                - combobox "Dies at the end of" [disabled] [ref=e150] [cursor=pointer]:
+                  - option "Chapter 1"
+                  - option "Chapter 2" [selected]
+                  - option "Chapter 3"
+                  - option "Chapter 4"
+                  - option "Chapter 5"
+            - generic [ref=e151]:
+              - text: Revision note
+              - generic [ref=e152]: YOU SET THE DIRECTION
+            - textbox "Revision note YOU SET THE DIRECTION" [disabled] [ref=e153]: Mara betrays the crew and dies at the end of chapter 2.
+            - paragraph [ref=e154]: This demo changes who is alive. Additional plot details stay as your editing notes. You approve every revision.
+            - button "Revision in progress" [disabled] [ref=e155]
+        - generic [ref=e161]:
+          - generic [ref=e486]:
+            - heading "The ripple in motion" [level=2] [ref=e487]
+            - generic [ref=e488]: Your review
+          - paragraph [ref=e490]: The revision is prepared. Your approval makes it canon.
+          - generic [ref=e491]:
+            - generic [ref=e492]:
+              - strong [ref=e493]: "3"
+              - text: CHECKED
+            - generic [ref=e494]:
+              - strong [ref=e495]: "2"
+              - text: REWRITTEN
+            - generic [ref=e496]:
+              - strong [ref=e497]: "3"
+              - text: UNTOUCHED
+          - generic [ref=e498]:
+            - strong [ref=e499]: Does this feel like your story?
+            - paragraph [ref=e500]: Review the paragraph changes, then accept the revision or keep your current draft.
+            - button "Compare the changes" [ref=e501] [cursor=pointer]
+            - generic [ref=e504]:
+              - button "Keep original" [ref=e505] [cursor=pointer]
+              - button "Approve revision" [ref=e506] [cursor=pointer]
+          - button "Cancel revision · keep original" [ref=e509] [cursor=pointer]
+          - generic [ref=e510]: ACTIVITY
+          - generic [ref=e511]:
+            - generic [ref=e512]:
+              - generic [ref=e514]: All checked rules pass. Review the changes and decide whether to publish.
+              - time [ref=e515]: 11:32 PM
+            - generic [ref=e516]:
+              - generic [ref=e518]: "Chapter 4: replacement paragraph passed the deterministic checks."
+              - time [ref=e519]: 11:32 PM
+            - generic [ref=e520]:
+              - generic [ref=e522]: "Chapter 3: replacement paragraph passed the deterministic checks."
+              - time [ref=e523]: 11:31 PM
+            - generic [ref=e524]:
+              - generic [ref=e526]: 2 paragraphs need repair. All other text will be preserved byte-for-byte.
+              - time [ref=e527]: 11:31 PM
+            - generic [ref=e528]:
+              - generic [ref=e530]: "Chapter 4: dead_character_speaks — Mara speaks after dying at the end of chapter 2."
+              - time [ref=e531]: 11:31 PM
+            - generic [ref=e532]:
+              - generic [ref=e534]: "Chapter 3: dead_character_speaks — Mara speaks after dying at the end of chapter 2."
+              - time [ref=e535]: 11:31 PM
+            - generic [ref=e536]:
+              - generic [ref=e538]: Checked 3 dependent chapters against the proposed canon.
+              - time [ref=e539]: 11:31 PM
+            - generic [ref=e540]:
+              - generic [ref=e542]: Canon revision queued. Published manuscript stays intact until your approval.
+              - time [ref=e543]: 11:30 PM
+          - link "See the Airflow run" [ref=e544] [cursor=pointer]:
+            - /url: http://127.0.0.1:8080/dags/retcon_cascade/runs/asset_triggered__2026-09-24T18%3A00%3A57.230563%2B00%3A00_ri0Kjp4C
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - heading "The story bible" [level=2] [ref=e206]
+            - generic [ref=e207]: CANON
+          - paragraph [ref=e208]: The facts holding this world together.
+          - generic [ref=e209]:
+            - generic [ref=e547]:
+              - generic [ref=e548]: M
+              - generic [ref=e549]:
+                - generic [ref=e550]: Mara
+                - generic [ref=e551]: Part of the story’s canon
+              - generic [ref=e552]: Unresolved
+            - generic [ref=e554]:
+              - generic [ref=e555]: S
+              - generic [ref=e556]:
+                - generic [ref=e557]: Sera
+                - generic [ref=e558]: Part of the story’s canon
+              - generic [ref=e559]: Alive
+            - generic [ref=e561]:
+              - generic [ref=e562]: I
+              - generic [ref=e563]:
+                - generic [ref=e564]: Ivo
+                - generic [ref=e565]: Part of the story’s canon
+              - generic [ref=e566]: Alive
+          - generic [ref=e231]: Continuity checks protect these facts.
+        - generic [ref=e234]:
+          - generic [ref=e235]: ✳
+          - paragraph [ref=e236]: Make the bold choice.We’ll follow the consequences.
+    - generic [ref=e237]:
+      - generic [ref=e238]: RETCON / A little revision. A different universe.
+      - link "Open orchestration" [ref=e239] [cursor=pointer]:
+        - /url: http://127.0.0.1:8080/dags/retcon_cascade/runs/asset_triggered__2026-09-24T18%3A00%3A57.230563%2B00%3A00_ri0Kjp4C

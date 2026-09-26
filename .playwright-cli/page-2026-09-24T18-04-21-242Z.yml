@@ -1,0 +1,505 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Home" [ref=e18] [cursor=pointer]:
+          - /url: /
+        - link "Dags" [ref=e23] [cursor=pointer]:
+          - /url: /dags
+        - link "Assets" [ref=e29] [cursor=pointer]:
+          - /url: /assets
+        - button "Browse" [ref=e35] [cursor=pointer]
+        - button "Admin" [ref=e40] [cursor=pointer]
+      - generic [ref=e45]:
+        - button "Docs" [ref=e46] [cursor=pointer]
+        - button "+05:30" [ref=e51] [cursor=pointer]
+        - button "User" [ref=e56] [cursor=pointer]
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - navigation "breadcrumb" [ref=e65]:
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - generic [ref=e68]:
+                - term [ref=e69]: Dag
+                - definition [ref=e70]:
+                  - generic [ref=e71]:
+                    - generic [ref=e72]:
+                      - checkbox [checked] [ref=e73]
+                      - generic [aria-hidden] [ref=e74] [cursor=pointer]
+                    - link "retcon_cascade" [ref=e76] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade
+            - listitem [aria-hidden] [ref=e77]
+            - listitem [ref=e80]:
+              - generic [ref=e81]:
+                - term [ref=e82]: Dag Run
+                - definition [ref=e83]:
+                  - link "asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C" [ref=e84]
+        - generic [ref=e86]:
+          - button "Search Dags ⌘+K" [ref=e88] [cursor=pointer]:
+            - text: Search Dags
+            - generic [ref=e92]: ⌘+K
+          - button "Trigger Dag" [ref=e397] [cursor=pointer]: Trigger
+      - generic [ref=e1144]:
+        - generic [ref=e1146]:
+          - generic [ref=e1148]:
+            - generic [ref=e1149]:
+              - button "Show Grid (Press g)" [ref=e1150] [cursor=pointer]
+              - button "Show Gantt" [ref=e1156] [cursor=pointer]
+              - button "Show Graph (Press g)" [ref=e1159] [cursor=pointer]
+            - generic [ref=e1163]:
+              - generic [ref=e1164]:
+                - button "Expand all task groups" [ref=e1165] [cursor=pointer]
+                - button "Collapse all task groups" [disabled] [ref=e1170]
+              - button [ref=e1175] [cursor=pointer]
+              - button [ref=e1178] [cursor=pointer]
+              - button "Options" [ref=e1182] [cursor=pointer]
+          - application [ref=e1188]:
+            - generic [ref=e1190]:
+              - generic:
+                - generic:
+                  - img:
+                    - img "Edge from check_existing_chapters to repair"
+                  - img:
+                    - img "Edge from editor_approval to publish_approved_revision" [ref=e1191] [cursor=pointer]
+                  - img:
+                    - img "Edge from prepare_editor_review to editor_approval"
+                  - img:
+                    - img "Edge from repair to prepare_editor_review" [ref=e1194] [cursor=pointer]
+                  - img:
+                    - img "Edge from repair to select_rejected_paragraphs" [ref=e1197] [cursor=pointer]
+                  - img:
+                    - img "Edge from resolve_revision to check_existing_chapters"
+                  - img:
+                    - img "Edge from resolve_revision to prepare_editor_review" [ref=e1200] [cursor=pointer]
+                  - img:
+                    - img "Edge from resolve_revision to publish_approved_revision" [ref=e1203] [cursor=pointer]
+                  - img:
+                    - img "Edge from retry_repair to prepare_editor_review" [ref=e1206] [cursor=pointer]
+                  - img:
+                    - img "Edge from select_rejected_paragraphs to retry_repair"
+                - generic:
+                  - generic [ref=e1211]:
+                    - link [ref=e1216] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/resolve_revision
+                      - paragraph [ref=e1217]: resolve_revision
+                    - paragraph [ref=e1218]: "@task"
+                    - generic [ref=e1219]: success
+                  - generic [ref=e1225]:
+                    - link [ref=e1230] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/check_existing_chapters
+                      - paragraph [ref=e1231]: check_existing_chapters
+                    - paragraph [ref=e1232]: "@task"
+                    - generic [ref=e1233]: success
+                  - generic [ref=e1239]:
+                    - link [ref=e1244] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/group/repair
+                      - paragraph [ref=e1245]: repair [ ]
+                    - paragraph [ref=e1246]: Task Group
+                    - generic [ref=e1247]: success
+                    - button "+ 2 Tasks" [ref=e1251] [cursor=pointer]
+                  - generic [ref=e1258]:
+                    - link [ref=e1263] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/select_rejected_paragraphs
+                      - paragraph [ref=e1264]: select_rejected_paragraphs
+                    - paragraph [ref=e1265]: "@task"
+                    - generic [ref=e1266]: success
+                  - generic [ref=e1272]:
+                    - link [ref=e1277] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/group/retry_repair
+                      - paragraph [ref=e1278]: retry_repair [ ]
+                    - paragraph [ref=e1279]: Task Group
+                    - generic [ref=e1280]: skipped
+                    - button "+ 2 Tasks" [ref=e1284] [cursor=pointer]
+                  - generic [ref=e1291]:
+                    - link [ref=e1296] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/prepare_editor_review
+                      - paragraph [ref=e1297]: prepare_editor_review
+                    - paragraph [ref=e1298]: "@task"
+                    - generic [ref=e1299]: success
+                  - generic [ref=e1305]:
+                    - link [ref=e1310] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/editor_approval
+                      - paragraph [ref=e1311]: editor_approval
+                    - paragraph [ref=e1312]: HITLOperator
+                    - generic [ref=e1313]: awaiting_input
+                  - generic [ref=e1321]:
+                    - link [ref=e1326] [cursor=pointer]:
+                      - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/publish_approved_revision
+                      - paragraph [ref=e1327]: publish_approved_revision
+                    - paragraph [ref=e1328]: "@task"
+            - generic "Control Panel" [ref=e1340]:
+              - button "Zoom In" [ref=e1341] [cursor=pointer]
+              - button "Zoom Out" [ref=e1344] [cursor=pointer]
+              - button "Fit View" [ref=e1347] [cursor=pointer]
+            - img "Mini Map" [ref=e1351]
+            - button "Download graph image" [ref=e1361] [cursor=pointer]
+            - link "React Flow attribution" [ref=e1366] [cursor=pointer]:
+              - /url: https://reactflow.dev?utm_source=attribution
+              - text: React Flow
+        - separator [ref=e1368]:
+          - button "Collapse Details Panel" [ref=e1370] [cursor=pointer]
+        - generic [ref=e1374]:
+          - generic [ref=e1375]:
+            - generic [ref=e1377]:
+              - generic [ref=e1378]:
+                - generic [ref=e1379]:
+                  - heading [level=2] [ref=e1380]
+                  - heading "asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C" [level=2] [ref=e1382]
+                  - heading [level=2]
+                  - generic [ref=e1383]: Running
+                - generic [ref=e1386]:
+                  - button [ref=e1388]:
+                    - generic [ref=e1389] [cursor=pointer]:
+                      - generic [ref=e1390]: "1"
+                      - paragraph [ref=e1395]: Required Actions
+                  - button "Press shift+c to clear" [ref=e1398] [cursor=pointer]
+                  - button "Mark Dag Run as..." [ref=e1402] [cursor=pointer]:
+                    - generic [ref=e1403]: /
+                  - button "Delete Dag Run" [ref=e1410] [cursor=pointer]
+              - generic [ref=e1413]:
+                - generic [ref=e1415]:
+                  - heading "Run Type" [level=2] [ref=e1416]
+                  - paragraph [ref=e1423]: Asset Triggered
+                - generic [ref=e1425]:
+                  - heading "Start Date" [level=2] [ref=e1426]
+                  - time [ref=e1429]: 2026-09-24 23:30:58
+                - heading "End Date" [level=2] [ref=e1432]
+                - generic [ref=e1434]:
+                  - heading "Duration" [level=2] [ref=e1435]
+                  - generic [ref=e1436]: 00:03:21
+                - generic [ref=e1438]:
+                  - heading "Dag Version(s)" [level=2] [ref=e1439]
+                  - generic [ref=e1440]: v3
+            - generic [ref=e1444]:
+              - paragraph [ref=e1449]: Add a note...
+              - button "Edit note" [ref=e1450] [cursor=pointer]
+          - generic [ref=e1454]:
+            - link "Task Instances" [ref=e1455] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C
+            - link "Asset Events" [ref=e1460] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/asset_events
+            - link "Audit Log" [ref=e1466] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/events
+            - link "Code" [ref=e1471] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/code
+            - link "Details" [ref=e1476] [cursor=pointer]:
+              - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/details
+          - generic [ref=e1481]:
+            - button "Filter" [ref=e1484] [cursor=pointer]
+            - generic [ref=e1488]:
+              - heading "12 Task Instances" [level=2] [ref=e1489]
+              - table [ref=e1491]:
+                - rowgroup [ref=e1492]:
+                  - row [ref=e1493]:
+                    - columnheader [ref=e1494]:
+                      - generic [ref=e1495]:
+                        - checkbox [ref=e1496]
+                        - generic [aria-hidden] [ref=e1497] [cursor=pointer]
+                    - columnheader "Task ID" [ref=e1499]
+                    - columnheader [ref=e1500]:
+                      - button "sort" [ref=e1501] [cursor=pointer]:
+                        - text: Map Index
+                        - img "unsorted" [ref=e1502]
+                    - columnheader [ref=e1504]:
+                      - button "sort" [ref=e1505] [cursor=pointer]:
+                        - text: State
+                        - img "unsorted" [ref=e1506]
+                    - columnheader [ref=e1508]:
+                      - button "sort" [ref=e1509] [cursor=pointer]:
+                        - text: Start Date
+                        - img "unsorted" [ref=e1510]
+                    - columnheader "Try Number" [ref=e1512]
+                    - columnheader "Operator" [ref=e1513]
+                    - columnheader [ref=e1514]:
+                      - button "sort" [ref=e1515] [cursor=pointer]:
+                        - text: Duration
+                        - img "unsorted" [ref=e1516]
+                    - columnheader [ref=e1518]:
+                      - button "Filter table columns" [ref=e1519] [cursor=pointer]
+                - rowgroup [ref=e1522]:
+                  - row [ref=e1523]:
+                    - cell [ref=e1524]:
+                      - generic [ref=e1525]:
+                        - checkbox [ref=e1526]
+                        - generic [aria-hidden] [ref=e1527] [cursor=pointer]
+                    - cell [ref=e1529]:
+                      - link [ref=e1530] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.validate_and_stage/mapped/1
+                        - paragraph [ref=e1531]: repair.validate_and_stage
+                    - cell [ref=e1532]:
+                      - link "1" [ref=e1533] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.validate_and_stage/mapped/1
+                    - cell "Success" [ref=e1534]
+                    - cell [ref=e1538]:
+                      - time [ref=e1540]: 2026-09-24 23:32:03
+                    - cell "1" [ref=e1541]
+                    - cell "@task" [ref=e1542]
+                    - cell "00:00:01.462" [ref=e1543]
+                    - cell [ref=e1544]:
+                      - generic [ref=e1545]:
+                        - button "Add a note" [ref=e1546] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1549] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1553] [cursor=pointer]:
+                          - generic [ref=e1554]: /
+                        - button "Delete Task Instance" [ref=e1561] [cursor=pointer]
+                  - row [ref=e1564]:
+                    - cell [ref=e1565]:
+                      - generic [ref=e1566]:
+                        - checkbox [ref=e1567]
+                        - generic [aria-hidden] [ref=e1568] [cursor=pointer]
+                    - cell [ref=e1570]:
+                      - link [ref=e1571] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.rewrite_paragraph/mapped/1
+                        - paragraph [ref=e1572]: repair.rewrite_paragraph
+                    - cell [ref=e1573]:
+                      - link "1" [ref=e1574] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.rewrite_paragraph/mapped/1
+                    - cell "Success" [ref=e1575]
+                    - cell [ref=e1579]:
+                      - time [ref=e1581]: 2026-09-24 23:31:33
+                    - cell "1" [ref=e1582]
+                    - cell "@task.llm" [ref=e1583]
+                    - cell "00:00:29.046" [ref=e1584]
+                    - cell [ref=e1585]:
+                      - generic [ref=e1586]:
+                        - button "Add a note" [ref=e1587] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1590] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1594] [cursor=pointer]:
+                          - generic [ref=e1595]: /
+                        - button "Delete Task Instance" [ref=e1602] [cursor=pointer]
+                  - row [ref=e1605]:
+                    - cell [ref=e1606]:
+                      - generic [ref=e1607]:
+                        - checkbox [ref=e1608]
+                        - generic [aria-hidden] [ref=e1609] [cursor=pointer]
+                    - cell [ref=e1611]:
+                      - link [ref=e1612] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/publish_approved_revision
+                        - paragraph [ref=e1613]: publish_approved_revision
+                    - cell [ref=e1614]
+                    - cell "No Status" [ref=e1615]
+                    - cell [ref=e1626]
+                    - cell "0" [ref=e1627]
+                    - cell "@task" [ref=e1628]
+                    - cell [ref=e1629]
+                    - cell [ref=e1630]:
+                      - generic [ref=e1631]:
+                        - button "Add a note" [ref=e1632] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1635] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1639] [cursor=pointer]:
+                          - generic [ref=e1640]: /
+                        - button "Delete Task Instance" [ref=e1647] [cursor=pointer]
+                  - row [ref=e1650]:
+                    - cell [ref=e1651]:
+                      - generic [ref=e1652]:
+                        - checkbox [ref=e1653]
+                        - generic [aria-hidden] [ref=e1654] [cursor=pointer]
+                    - cell [ref=e1656]:
+                      - link [ref=e1657] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/prepare_editor_review
+                        - paragraph [ref=e1658]: prepare_editor_review
+                    - cell [ref=e1659]
+                    - cell "Success" [ref=e1660]
+                    - cell [ref=e1664]:
+                      - time [ref=e1666]: 2026-09-24 23:32:09
+                    - cell "1" [ref=e1667]
+                    - cell "@task" [ref=e1668]
+                    - cell "00:00:01.533" [ref=e1669]
+                    - cell [ref=e1670]:
+                      - generic [ref=e1671]:
+                        - button "Add a note" [ref=e1672] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1675] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1679] [cursor=pointer]:
+                          - generic [ref=e1680]: /
+                        - button "Delete Task Instance" [ref=e1687] [cursor=pointer]
+                  - row [ref=e1690]:
+                    - cell [ref=e1691]:
+                      - generic [ref=e1692]:
+                        - checkbox [ref=e1693]
+                        - generic [aria-hidden] [ref=e1694] [cursor=pointer]
+                    - cell [ref=e1696]:
+                      - link [ref=e1697] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/retry_repair.validate_and_stage
+                        - paragraph [ref=e1698]: retry_repair.validate_and_stage
+                    - cell [ref=e1699]
+                    - cell "Skipped" [ref=e1700]
+                    - cell [ref=e1704]:
+                      - time [ref=e1706]: 2026-09-24 23:32:08
+                    - cell "0" [ref=e1707]
+                    - cell "@task" [ref=e1708]
+                    - cell [ref=e1709]
+                    - cell [ref=e1710]:
+                      - generic [ref=e1711]:
+                        - button "Add a note" [ref=e1712] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1715] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1719] [cursor=pointer]:
+                          - generic [ref=e1720]: /
+                        - button "Delete Task Instance" [ref=e1727] [cursor=pointer]
+                  - row [ref=e1730]:
+                    - cell [ref=e1731]:
+                      - generic [ref=e1732]:
+                        - checkbox [ref=e1733]
+                        - generic [aria-hidden] [ref=e1734] [cursor=pointer]
+                    - cell [ref=e1736]:
+                      - link [ref=e1737] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/retry_repair.rewrite_paragraph
+                        - paragraph [ref=e1738]: retry_repair.rewrite_paragraph
+                    - cell [ref=e1739]
+                    - cell "Skipped" [ref=e1740]
+                    - cell [ref=e1744]
+                    - cell "0" [ref=e1745]
+                    - cell "@task.llm" [ref=e1746]
+                    - cell [ref=e1747]
+                    - cell [ref=e1748]:
+                      - generic [ref=e1749]:
+                        - button "Add a note" [ref=e1750] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1753] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1757] [cursor=pointer]:
+                          - generic [ref=e1758]: /
+                        - button "Delete Task Instance" [ref=e1765] [cursor=pointer]
+                  - row [ref=e1768]:
+                    - cell [ref=e1769]:
+                      - generic [ref=e1770]:
+                        - checkbox [ref=e1771]
+                        - generic [aria-hidden] [ref=e1772] [cursor=pointer]
+                    - cell [ref=e1774]:
+                      - link [ref=e1775] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/select_rejected_paragraphs
+                        - paragraph [ref=e1776]: select_rejected_paragraphs
+                    - cell [ref=e1777]
+                    - cell "Success" [ref=e1778]
+                    - cell [ref=e1782]:
+                      - time [ref=e1784]: 2026-09-24 23:32:05
+                    - cell "1" [ref=e1785]
+                    - cell "@task" [ref=e1786]
+                    - cell "00:00:01.403" [ref=e1787]
+                    - cell [ref=e1788]:
+                      - generic [ref=e1789]:
+                        - button "Add a note" [ref=e1790] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1793] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1797] [cursor=pointer]:
+                          - generic [ref=e1798]: /
+                        - button "Delete Task Instance" [ref=e1805] [cursor=pointer]
+                  - row [ref=e1808]:
+                    - cell [ref=e1809]:
+                      - generic [ref=e1810]:
+                        - checkbox [ref=e1811]
+                        - generic [aria-hidden] [ref=e1812] [cursor=pointer]
+                    - cell [ref=e1814]:
+                      - link [ref=e1815] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.validate_and_stage/mapped/0
+                        - paragraph [ref=e1816]: repair.validate_and_stage
+                    - cell [ref=e1817]:
+                      - link "0" [ref=e1818] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.validate_and_stage/mapped/0
+                    - cell "Success" [ref=e1819]
+                    - cell [ref=e1823]:
+                      - time [ref=e1825]: 2026-09-24 23:31:33
+                    - cell "1" [ref=e1826]
+                    - cell "@task" [ref=e1827]
+                    - cell "00:00:01.540" [ref=e1828]
+                    - cell [ref=e1829]:
+                      - generic [ref=e1830]:
+                        - button "Add a note" [ref=e1831] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1834] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1838] [cursor=pointer]:
+                          - generic [ref=e1839]: /
+                        - button "Delete Task Instance" [ref=e1846] [cursor=pointer]
+                  - row [ref=e1849]:
+                    - cell [ref=e1850]:
+                      - generic [ref=e1851]:
+                        - checkbox [ref=e1852]
+                        - generic [aria-hidden] [ref=e1853] [cursor=pointer]
+                    - cell [ref=e1855]:
+                      - link [ref=e1856] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.rewrite_paragraph/mapped/0
+                        - paragraph [ref=e1857]: repair.rewrite_paragraph
+                    - cell [ref=e1858]:
+                      - link "0" [ref=e1859] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/repair.rewrite_paragraph/mapped/0
+                    - cell "Success" [ref=e1860]
+                    - cell [ref=e1864]:
+                      - time [ref=e1866]: 2026-09-24 23:31:02
+                    - cell "1" [ref=e1867]
+                    - cell "@task.llm" [ref=e1868]
+                    - cell "00:00:30.681" [ref=e1869]
+                    - cell [ref=e1870]:
+                      - generic [ref=e1871]:
+                        - button "Add a note" [ref=e1872] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1875] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1879] [cursor=pointer]:
+                          - generic [ref=e1880]: /
+                        - button "Delete Task Instance" [ref=e1887] [cursor=pointer]
+                  - row [ref=e1890]:
+                    - cell [ref=e1891]:
+                      - generic [ref=e1892]:
+                        - checkbox [ref=e1893]
+                        - generic [aria-hidden] [ref=e1894] [cursor=pointer]
+                    - cell [ref=e1896]:
+                      - link [ref=e1897] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/check_existing_chapters
+                        - paragraph [ref=e1898]: check_existing_chapters
+                    - cell [ref=e1899]
+                    - cell "Success" [ref=e1900]
+                    - cell [ref=e1904]:
+                      - time [ref=e1906]: 2026-09-24 23:31:00
+                    - cell "1" [ref=e1907]
+                    - cell "@task" [ref=e1908]
+                    - cell "00:00:01.301" [ref=e1909]
+                    - cell [ref=e1910]:
+                      - generic [ref=e1911]:
+                        - button "Add a note" [ref=e1912] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1915] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1919] [cursor=pointer]:
+                          - generic [ref=e1920]: /
+                        - button "Delete Task Instance" [ref=e1927] [cursor=pointer]
+                  - row [ref=e1930]:
+                    - cell [ref=e1931]:
+                      - generic [ref=e1932]:
+                        - checkbox [ref=e1933]
+                        - generic [aria-hidden] [ref=e1934] [cursor=pointer]
+                    - cell [ref=e1936]:
+                      - link [ref=e1937] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/resolve_revision
+                        - paragraph [ref=e1938]: resolve_revision
+                    - cell [ref=e1939]
+                    - cell "Success" [ref=e1940]
+                    - cell [ref=e1944]:
+                      - time [ref=e1946]: 2026-09-24 23:30:58
+                    - cell "1" [ref=e1947]
+                    - cell "@task" [ref=e1948]
+                    - cell "00:00:01.304" [ref=e1949]
+                    - cell [ref=e1950]:
+                      - generic [ref=e1951]:
+                        - button "Add a note" [ref=e1952] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1955] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e1959] [cursor=pointer]:
+                          - generic [ref=e1960]: /
+                        - button "Delete Task Instance" [ref=e1967] [cursor=pointer]
+                  - row [ref=e1970]:
+                    - cell [ref=e1971]:
+                      - generic [ref=e1972]:
+                        - checkbox [ref=e1973]
+                        - generic [aria-hidden] [ref=e1974] [cursor=pointer]
+                    - cell [ref=e1976]:
+                      - link [ref=e1977] [cursor=pointer]:
+                        - /url: /dags/retcon_cascade/runs/asset_triggered__2026-09-24T18:00:57.230563+00:00_ri0Kjp4C/tasks/editor_approval
+                        - paragraph [ref=e1978]: editor_approval
+                    - cell [ref=e1979]
+                    - cell "Awaiting Input" [ref=e1980]
+                    - cell [ref=e1986]:
+                      - time [ref=e1988]: 2026-09-24 23:32:11
+                    - cell "1" [ref=e1989]
+                    - cell "HITLOperator" [ref=e1990]
+                    - cell [ref=e1991]
+                    - cell [ref=e1992]:
+                      - generic [ref=e1993]:
+                        - button "Add a note" [ref=e1994] [cursor=pointer]
+                        - button "Clear Task Instance" [ref=e1997] [cursor=pointer]
+                        - button "Mark Task Instance as..." [ref=e2001] [cursor=pointer]:
+                          - generic [ref=e2002]: /
+                        - button "Delete Task Instance" [ref=e2009] [cursor=pointer]
+  - region "Notifications, bottom-end (alt+T)"
+  - region "Notifications, bottom-end (alt+T)"

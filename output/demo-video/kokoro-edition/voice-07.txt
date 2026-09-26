@@ -1,0 +1,1 @@
+The replacements pass the implemented continuity checks before review. Invalid or incomplete repairs cannot publish. Until the author approves, the published manuscript and its canon remain intact.

@@ -1,0 +1,135 @@
+1
+00:00:00,000 --> 00:00:05,500
+A novelist’s nightmare. One change, and the story stops making sense.
+
+2
+00:00:06,900 --> 00:00:09,300
+Mara dies at the end of chapter two.
+
+3
+00:00:10,160 --> 00:00:12,660
+So why is she still speaking in chapter three?
+
+4
+00:00:13,860 --> 00:00:16,460
+This is RETCON—backfill for stories.
+
+5
+00:00:17,200 --> 00:00:21,060
+It’s an Apache Airflow plugin, with the writer’s workspace built right
+
+6
+00:00:20,960 --> 00:00:21,720
+into Airflow.
+
+7
+00:00:22,860 --> 00:00:26,140
+Here’s The Aster Protocol, a five-chapter mystery.
+
+8
+00:00:26,740 --> 00:00:31,060
+I’m changing Mara’s fate: she dies at the end of chapter two.
+
+9
+00:00:31,900 --> 00:00:34,060
+First, let’s see what that would break.
+
+10
+00:00:35,040 --> 00:00:40,340
+Three later chapters mention her. Two still give her dialogue after she’s
+
+11
+00:00:40,240 --> 00:00:46,300
+dead. That’s a problem. Chapter five only remembers her, so that passage
+
+12
+00:00:46,200 --> 00:00:46,880
+is fine.
+
+13
+00:00:47,780 --> 00:00:53,380
+Now I apply the change. A character-canon Asset event triggers the repair
+
+14
+00:00:53,280 --> 00:00:56,520
+workflow. I’ve shortened the model wait here.
+
+15
+00:00:57,320 --> 00:01:02,400
+Airflow uses dynamic task mapping to send only the broken paragraphs to
+
+16
+00:01:02,300 --> 00:01:08,000
+its Common AI provider. The model proposes replacements; RETCON checks
+
+17
+00:01:07,900 --> 00:01:12,800
+them. In this run, one needed a corrective attempt before it passed.
+
+18
+00:01:14,180 --> 00:01:17,340
+Then Airflow stops at its native human approval task.
+
+19
+00:01:17,880 --> 00:01:22,000
+The original manuscript stays intact while the writer reviews the
+
+20
+00:01:21,900 --> 00:01:26,900
+changes. Passing a check doesn’t make something good writing—the author
+
+21
+00:01:26,800 --> 00:01:27,760
+still decides.
+
+22
+00:01:29,020 --> 00:01:34,520
+Here are the versions side by side. Ivo takes over Mara’s dialogue, while
+
+23
+00:01:34,420 --> 00:01:36,660
+the surrounding paragraphs stay as they were.
+
+24
+00:01:37,440 --> 00:01:40,180
+I’m happy with these changes, so I’ll approve them.
+
+25
+00:01:41,040 --> 00:01:42,260
+I could also keep the original.
+
+26
+00:01:43,480 --> 00:01:45,380
+Approval resumes the Airflow workflow.
+
+27
+00:01:46,240 --> 00:01:50,500
+RETCON publishes a new manuscript version, and Airflow records the
+
+28
+00:01:50,400 --> 00:01:55,460
+published-manuscript Asset event. Three chapters checked, two paragraphs
+
+29
+00:01:55,360 --> 00:01:57,780
+repaired, three chapters untouched.
+
+30
+00:01:59,180 --> 00:02:03,500
+And here’s chapter five. Sera still remembers Mara’s laugh.
+
+31
+00:02:04,540 --> 00:02:09,560
+That memory belongs in the story. I can now export the revised manuscript
+
+32
+00:02:09,460 --> 00:02:11,380
+as Markdown and keep writing.
+
+33
+00:02:12,260 --> 00:02:18,020
+That’s RETCON. One plugin, from a story change to an approved revision.
+
+34
+00:02:18,660 --> 00:02:21,840
+Change the past. Keep your story whole.

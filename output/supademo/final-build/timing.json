@@ -1,0 +1,96 @@
+{
+  "source_audio": "ElevenLabs_2026-09-24T19_44_10_Liam - Viral Short-Form Storyteller_pvc_sp93_s50_sb55_v3.mp3",
+  "voice": "Liam - Viral Short-Form Storyteller",
+  "take": "Generation 2",
+  "speech_speed_changed": false,
+  "alignment_match": 0.9847715736040609,
+  "duration": 143.03333333333333,
+  "pauses": [],
+  "scenes": [
+    {
+      "paragraph": 1,
+      "start": 0,
+      "end": 13.666666666666666,
+      "duration": 13.666666666666666,
+      "text": "A novelist\u2019s nightmare. One change, and the story stops making sense. Mara dies at the end of chapter two. So why is she still speaking in chapter three?"
+    },
+    {
+      "paragraph": 2,
+      "start": 13.666666666666666,
+      "end": 22.666666666666668,
+      "duration": 9.000000000000002,
+      "text": "This is RETCON\u2014backfill for stories. It\u2019s an Apache Airflow plugin, with the writer\u2019s workspace built right into Airflow."
+    },
+    {
+      "paragraph": 3,
+      "start": 22.666666666666668,
+      "end": 34.833333333333336,
+      "duration": 12.166666666666668,
+      "text": "Here\u2019s The Aster Protocol, a five-chapter mystery. I\u2019m changing Mara\u2019s fate: she dies at the end of chapter two. First, let\u2019s see what that would break."
+    },
+    {
+      "paragraph": 4,
+      "start": 34.833333333333336,
+      "end": 47.56666666666667,
+      "duration": 12.733333333333334,
+      "text": "Three later chapters mention her. Two still give her dialogue after she\u2019s dead. That\u2019s a problem. Chapter five only remembers her, so that passage is fine."
+    },
+    {
+      "paragraph": 5,
+      "start": 47.56666666666667,
+      "end": 57.13333333333333,
+      "duration": 9.566666666666663,
+      "text": "Now I apply the change. A character-canon Asset event triggers the repair workflow. I\u2019ve shortened the model wait here."
+    },
+    {
+      "paragraph": 6,
+      "start": 57.13333333333333,
+      "end": 73.96666666666667,
+      "duration": 16.833333333333336,
+      "text": "Airflow uses dynamic task mapping to send only the broken paragraphs to its Common AI provider. The model proposes replacements; RETCON checks them. In this run, one needed a corrective attempt before it passed."
+    },
+    {
+      "paragraph": 7,
+      "start": 73.96666666666667,
+      "end": 88.83333333333333,
+      "duration": 14.86666666666666,
+      "text": "Then Airflow stops at its native human approval task. The original manuscript stays intact while the writer reviews the changes. Passing a check doesn\u2019t make something good writing\u2014the author still decides."
+    },
+    {
+      "paragraph": 8,
+      "start": 88.83333333333333,
+      "end": 97.23333333333333,
+      "duration": 8.400000000000006,
+      "text": "Here are the versions side by side. Ivo takes over Mara\u2019s dialogue, while the surrounding paragraphs stay as they were."
+    },
+    {
+      "paragraph": 9,
+      "start": 97.23333333333333,
+      "end": 103.26666666666667,
+      "duration": 6.033333333333331,
+      "text": "I\u2019m happy with these changes, so I\u2019ll approve them. I could also keep the original."
+    },
+    {
+      "paragraph": 10,
+      "start": 103.26666666666667,
+      "end": 118.96666666666667,
+      "duration": 15.700000000000003,
+      "text": "Approval resumes the Airflow workflow. RETCON publishes a new manuscript version, and Airflow records the published-manuscript Asset event. Three chapters checked, two paragraphs repaired, three chapters untouched."
+    },
+    {
+      "paragraph": 11,
+      "start": 118.96666666666667,
+      "end": 132.06666666666666,
+      "duration": 13.099999999999994,
+      "text": "And here\u2019s chapter five. Sera still remembers Mara\u2019s laugh. That memory belongs in the story. I can now export the revised manuscript as Markdown and keep writing."
+    },
+    {
+      "paragraph": 12,
+      "start": 132.06666666666666,
+      "end": 143.03333333333333,
+      "duration": 10.966666666666669,
+      "text": "That\u2019s RETCON. One plugin, from a story change to an approved revision. Change the past. Keep your story whole."
+    }
+  ],
+  "export_start": 127.26666666666667
+}
